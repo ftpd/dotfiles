@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # cleaning
-rm -rf ~/.dotfiles ~/.oh-my-zsh ~/.zshrc ~/.vim ~/.vimrc ~/.gvimrc
+rm -rf ~/.dotfiles ~/.oh-my-zsh ~/.zshrc ~/.vim ~/.vimrc ~/.gvimrc ~/.gitignore
 
 # zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -18,12 +18,12 @@ fi
 git clone $path .dotfiles
 
 # vim
-ln -s ~/.dotfiles/vim ~/.vim
-ln -s ~/.vim/rcfiles/vimrc ~/.vimrc
-ln -s ~/.vim/rcfiles/gvimrc ~/.gvimrc
+ln -sf ~/.dotfiles/vim ~/.vim
+ln -sf ~/.vim/rcfiles/vimrc ~/.vimrc
+ln -sf ~/.vim/rcfiles/gvimrc ~/.gvimrc
 rm -rf ~/.vim/bundle/*
 git clone git://github.com/Lokaltog/vim-powerline.git ~/.vim/bundle/powerline
 git clone git://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 
 # .gitignore
-ln -s ~/.dotfiles/gitignore ~/.gitignore
+ln -sf ~/.dotfiles/gitignore ~/.gitignore
