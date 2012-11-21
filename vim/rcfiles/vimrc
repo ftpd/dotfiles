@@ -1,0 +1,61 @@
+version 7.3
+
+syntax on
+set background=dark
+colorscheme solarized
+hi BadWhitespace ctermbg=red guibg=red
+
+let g:Powerline_symbols='fancy'
+
+set gdefault
+set nobackup
+set nodigraph
+set incsearch
+set nohlsearch
+set nojoinspaces
+set nocompatible
+set nowritebackup
+
+set title
+set number
+set showcmd "show combo command as you type it in the bottom right corner
+set showmode "show what mode you're in (Insert, Replace, Visual, etc.)
+set ruler laststatus=2 "show rulers for buffers and the status line even if there's only 1 file
+set clipboard+=unnamed "the same clipboard is used for Visual mode
+set ignorecase smartcase "when searching, match case only when at least one char is upper
+set backspace=eol,start,indent "make backspace work between lines and with indentation
+set winminheight=0 "Allow windows to get fully squashed
+set scrolloff=5 "start scrolling 10 lines before the end of the buffer
+set cursorline "highlight current line
+set cursorcolumn "highlight current column
+
+set shiftwidth=2 tabstop=2 softtabstop=2 "by default, Tab moves by 2 spaces
+set shiftround "tabbing and detabbing also uses shiftwidth
+set autoindent "keep current indent state when starting a new line
+set matchpairs+=(:),{:},[:],<:>,':',":" "join these pairs of characters; useful for highlighting and jumping between with %
+
+set bs=2
+
+nmap <tab> w
+nmap  :wq!
+imap  <BS>
+
+map <leader>b  <Esc>:set cc=79<CR>
+map <leader>nb <Esc>:set cc=0<CR>
+map <leader>n  <Esc>:set nonumber!<CR>
+map <leader>\  <Esc>:setlocal nospell<CR>
+map <leader>pl <Esc>:setlocal spell spelllang=pl<CR>
+map <leader>en <Esc>:setlocal spell spelllang=en_gb<CR>
+map <leader>p  <Esc>:set paste!<CR>
+map <F2> :NERDTreeToggle<CR>
+
+call pathogen#runtime_append_all_bundles()
+
+nnoremap n nzzzv
+nnoremap N Nzzzv¬
+
+au BufRead,BufNewFile *.pp
+	\ set filetype=puppet
+au BufRead,BufNewFile *_spec.rb
+	\ nmap <F8> :!rspec --color %<CR>
+filetype plugin indent on  
