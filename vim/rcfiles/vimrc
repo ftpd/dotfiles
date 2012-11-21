@@ -5,7 +5,7 @@ set background=dark
 colorscheme solarized
 hi BadWhitespace ctermbg=red guibg=red
 
-let g:Powerline_symbols='fancy'
+"let g:Powerline_symbols='fancy'
 
 set gdefault
 set nobackup
