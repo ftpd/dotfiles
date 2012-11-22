@@ -10,7 +10,7 @@ sed -i -e 's/robbyrussell/nicoulaj/' ~/.zshrc
 echo "[ -e ~/.zshrc.local ] && source ~/.zshrc.local" >> ~/.zshrc
 
 # ftpd/doftiles
-path="https://ftpd@bitbucket.org/ftpd/dotfiles.git"
+path="https://bitbucket.org/ftpd/dotfiles.git"
 
 if [ `hostname` = "tuonela.local" ] && [ `whoami` = "ftpd" ]; then
 	path="git@bitbucket.org:ftpd/dotfiles.git"
