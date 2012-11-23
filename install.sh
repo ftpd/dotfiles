@@ -8,6 +8,7 @@ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 sed -i -e 's/robbyrussell/nicoulaj/' ~/.zshrc
 echo "[ -e ~/.zshrc.local ] && source ~/.zshrc.local" >> ~/.zshrc
+echo "zstyle ':vcs_info:*' enable hg bzr git svn" >> ~/.zshrc
 
 # ftpd/doftiles
 path="https://bitbucket.org/ftpd/dotfiles.git"
