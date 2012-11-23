@@ -15,7 +15,7 @@ path="https://bitbucket.org/ftpd/dotfiles.git"
 if [ `hostname` = "tuonela.local" ] && [ `whoami` = "ftpd" ]; then
 	path="git@bitbucket.org:ftpd/dotfiles.git"
 fi
-git clone $path .dotfiles
+git clone $path ~/.dotfiles
 
 # vim
 ln -sf ~/.dotfiles/vim ~/.vim
