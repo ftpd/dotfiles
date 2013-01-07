@@ -7,6 +7,7 @@ rm -rf ~/.dotfiles ~/.oh-my-zsh ~/.zshrc ~/.vim ~/.vimrc ~/.gvimrc ~/.gitignore
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 sed -i -e 's/robbyrussell/nicoulaj/' ~/.zshrc
+sed -i -e 's/# CASE_SENSITIVE/CASE_SENSITIVE/' ~/.zshrc
 echo "[ -e ~/.zshrc.local ] && source ~/.zshrc.local" >> ~/.zshrc
 echo "zstyle ':vcs_info:*' enable hg bzr git svn" >> ~/.zshrc
 
