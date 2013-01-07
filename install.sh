@@ -14,7 +14,7 @@ echo "zstyle ':vcs_info:*' enable hg bzr git svn" >> ~/.zshrc
 # ftpd/doftiles
 path="https://bitbucket.org/ftpd/dotfiles.git"
 
-if [ `hostname` = "tuonela.local" ] && [ `whoami` = "ftpd" ]; then
+if [ `hostname` = "tuonela" ] && [ `whoami` = "ftpd" ]; then
 	path="git@bitbucket.org:ftpd/dotfiles.git"
 fi
 git clone $path ~/.dotfiles
