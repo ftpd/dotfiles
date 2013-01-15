@@ -30,7 +30,7 @@ set scrolloff=5 "start scrolling 10 lines before the end of the buffer
 set cursorline "highlight current line
 set cursorcolumn "highlight current column
 
-set shiftwidth=2 tabstop=2 softtabstop=2 "by default, Tab moves by 2 spaces
+set shiftwidth=2 tabstop=2 softtabstop=2 expandtab "by default, Tab moves by 2 spaces
 set shiftround "tabbing and detabbing also uses shiftwidth
 set autoindent "keep current indent state when starting a new line
 set matchpairs+=(:),{:},[:],<:>,':',":" "join these pairs of characters; useful for highlighting and jumping between with %
