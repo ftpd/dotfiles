@@ -24,9 +24,9 @@ ln -sf ~/.dotfiles/vim ~/.vim
 ln -sf ~/.vim/rcfiles/vimrc ~/.vimrc
 ln -sf ~/.vim/rcfiles/gvimrc ~/.gvimrc
 rm -rf ~/.vim/bundle/*
-cd ~/.dotfiles
-git submodule add git://github.com/Lokaltog/vim-powerline.git vim/bundle/powerline
-git submodule add git://github.com/scrooloose/nerdtree.git vim/bundle/nerdtree
+#cd ~/.dotfiles
+#git submodule add git://github.com/Lokaltog/vim-powerline.git vim/bundle/powerline
+#git submodule add git://github.com/scrooloose/nerdtree.git vim/bundle/nerdtree
 
 # .gitignore
 ln -sf ~/.dotfiles/gitignore ~/.gitignore
