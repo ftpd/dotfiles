@@ -14,7 +14,7 @@ echo "zstyle ':vcs_info:*' enable hg bzr git svn" >> ~/.zshrc
 # ftpd/doftiles
 path="https://bitbucket.org/ftpd/dotfiles.git"
 
-if [ `hostname` = "tuonela" ] && [ `whoami` = "ftpd" ]; then
+if [ `hostname` = "tuonela" ] && [ `whoami` = "bartek.stalewski" ]; then
 	path="git@bitbucket.org:ftpd/dotfiles.git"
 fi
 git clone $path ~/.dotfiles
@@ -24,8 +24,8 @@ ln -sf ~/.dotfiles/vim ~/.vim
 ln -sf ~/.vim/rcfiles/vimrc ~/.vimrc
 ln -sf ~/.vim/rcfiles/gvimrc ~/.gvimrc
 rm -rf ~/.vim/bundle/*
-git clone git://github.com/Lokaltog/vim-powerline.git ~/.vim/bundle/powerline
-git clone git://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+git submodule git://github.com/Lokaltog/vim-powerline.git ~/.vim/bundle/powerline
+git submodule git://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 
 # .gitignore
 ln -sf ~/.dotfiles/gitignore ~/.gitignore
