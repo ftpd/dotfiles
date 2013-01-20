@@ -29,8 +29,8 @@ rm -rf ~/.vim/bundle/*
 cd ~/.dotfiles
 git submodule init
 git submodule update
-#cd vim/bundle/powerline
-#git checkout -b develop origin/develop
+cd vim/bundle/powerline
+git checkout -b develop origin/develop
 
 # .gitignore
 ln -sf ~/.dotfiles/gitignore ~/.gitignore
