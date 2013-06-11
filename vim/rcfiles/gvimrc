@@ -1,4 +1,4 @@
-set background=light
+set background=dark
 colorscheme solarized
 set guifont=Menlo:h11
 set guioptions-=rL

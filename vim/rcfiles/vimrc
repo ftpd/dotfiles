@@ -1,8 +1,8 @@
-version 7.3
+version 7.3.754
 
 syntax on
 set encoding=utf-8
-set background=light
+set background=dark
 colorscheme solarized
 hi BadWhitespace ctermbg=red guibg=red
 

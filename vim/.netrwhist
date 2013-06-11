@@ -1,8 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/ftpd/.oh-my-zsh/plugins/github'
-let g:netrw_dirhist_2='/Users/ftpd/tf/arkadia'
-let g:netrw_dirhist_3='/Users/ftpd/Lab/puppet/modules/ventures/otrs_test'
-let g:netrw_dirhist_4='/Users/bartek.stalewski/Dropbox'
-let g:netrw_dirhist_5='/Users/bartek.stalewski/Lab/puppet/modules/ventures/bamboo_prod'
-let g:netrw_dirhist_6='/Users/bartek.stalewski/Lab/puppet/modules/ventures/fisheye_prod'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/bartek.stalewski/Dropbox/Logs/irc/ircnet/Queries/niziou'
+let g:netrw_dirhist_2='/Users/bartek.stalewski/Dropbox/Backup/tuonela'
+let g:netrw_dirhist_3='/Users/bartek.stalewski/x'
