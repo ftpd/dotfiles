@@ -8,6 +8,7 @@ hi BadWhitespace ctermbg=red guibg=red
 
 let g:Powerline_symbols='fancy'
 
+set t_Co=256
 set gdefault
 set nobackup
 set nodigraph
