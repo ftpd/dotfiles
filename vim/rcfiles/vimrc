@@ -34,7 +34,6 @@ set shiftwidth=2 tabstop=2 softtabstop=2 expandtab "by default, Tab moves by 2 s
 set shiftround "tabbing and detabbing also uses shiftwidth
 set autoindent "keep current indent state when starting a new line
 set matchpairs+=(:),{:},[:],<:>,':',":" "join these pairs of characters; useful for highlighting and jumping between with %
-
 set bs=2
 
 nmap <tab> w
@@ -60,3 +59,8 @@ au BufRead,BufNewFile *.pp
 au BufRead,BufNewFile *_spec.rb
 	\ nmap <F8> :!rspec --color %<CR>
 filetype plugin indent on  
+
+
+"====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+set list
