@@ -4,3 +4,6 @@
 [submodule "vim/bundle/powerline"]
 	path = vim/bundle/powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "lscolors"]
+	path = lscolors
+	url = https://github.com/trapd00r/LS_COLORS.git
