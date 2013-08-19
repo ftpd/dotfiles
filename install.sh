@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # cleaning
-rm -rf ~/.dotfiles ~/.oh-my-zsh ~/.zshrc ~/.vim ~/.vimrc ~/.gvimrc ~/.gitignore
+rm -rf ~/.dotfiles ~/.oh-my-zsh ~/.zshrc ~/.vim ~/.vimrc ~/.gvimrc ~/.gitignore ~/.tmux.conf
 
 # zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -34,3 +34,6 @@ git checkout -b develop origin/develop
 
 # .gitignore
 ln -sf ~/.dotfiles/gitignore ~/.gitignore
+
+# tmux
+ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
