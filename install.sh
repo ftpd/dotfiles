@@ -8,7 +8,7 @@ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 sed -i -e 's/robbyrussell/nicoulaj/' ~/.zshrc
 sed -i -e 's/# CASE_SENSITIVE/CASE_SENSITIVE/' ~/.zshrc
-echo "eval $( gdircolors -b ~/.dotfiles/dircolors ) " >> ~/.zshrc
+echo '$eval $( gdircolors -b ~/.dotfiles/dircolors ) ' >> ~/.zshrc
 echo "zstyle ':vcs_info:*' enable hg bzr git svn" >> ~/.zshrc
 echo "[ -e ~/.zshrc.local ] && source ~/.zshrc.local" >> ~/.zshrc
 
