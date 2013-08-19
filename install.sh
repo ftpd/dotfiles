@@ -12,10 +12,17 @@ else
 fi
 git clone $path ~/.dotfiles
 cd ~/.dotfiles
+rm -rf ~/.vim/bundle/*
 git submodule init
 git submodule update
+cd vim/bundle/nerdtree
+git checkout master
+cd ~/.dotfiles
 cd vim/bundle/powerline
-git checkout -b develop origin/develop
+git checkout develop
+cd ~/.dotfiles
+cd dircolors
+git checkout master
 
 # files
 
@@ -34,7 +41,6 @@ echo "[ -e ~/.zshrc.local ] && source ~/.zshrc.local" >> ~/.zshrc
 ln -sf ~/.dotfiles/vim ~/.vim
 ln -sf ~/.vim/rcfiles/vimrc ~/.vimrc
 ln -sf ~/.vim/rcfiles/gvimrc ~/.gvimrc
-rm -rf ~/.vim/bundle/*
 
 # .gitignore
 ln -sf ~/.dotfiles/gitignore ~/.gitignore
