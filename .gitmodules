@@ -7,3 +7,9 @@
 [submodule "lscolors"]
 	path = lscolors
 	url = https://github.com/trapd00r/LS_COLORS.git
+[submodule "dircolors-solarized"]
+	path = dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "dircolors"]
+	path = dircolors
+	url = https://github.com/seebi/dircolors-solarized.git
