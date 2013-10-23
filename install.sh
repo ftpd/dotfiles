@@ -36,6 +36,7 @@ case `uname` in
 esac
 echo "zstyle ':vcs_info:*' enable hg bzr git svn" >> ~/.zshrc
 echo "[ -e ~/.zshrc.local ] && source ~/.zshrc.local" >> ~/.zshrc
+source ~/.zshrc
 
 # vim
 ln -sf ~/.dotfiles/vim ~/.vim
