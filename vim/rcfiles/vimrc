@@ -18,6 +18,9 @@ set nojoinspaces
 set nocompatible
 set nowritebackup
 
+set spelllang=pl
+set spell
+
 set title
 set number
 set showcmd "show combo command as you type it in the bottom right corner
