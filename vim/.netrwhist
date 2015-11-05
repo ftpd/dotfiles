@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/bartek.stalewski/Dropbox/Logs/adium/Jabber.bartek.stalewski@allegro.pl/piotr.michonski@allegro.pl/piotr.michonski@allegro.pl (2012-12-17T14.17.35+0100).chatlog'
-let g:netrw_dirhist_2='/Users/bartek.stalewski/Dropbox/Logs/messages/2013-06-11'
-let g:netrw_dirhist_3='/Users/bartek.stalewski/Lab/puppet/modules/ventures/dms_prod'
-let g:netrw_dirhist_4='/Users/bartek.stalewski/tf/common'

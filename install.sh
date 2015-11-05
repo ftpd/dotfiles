@@ -28,7 +28,7 @@ git checkout master
 
 ## zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-sed -i -e 's/robbyrussell/nicoulaj/' ~/.zshrc
+sed -i -e 's/robbyrussell/agnoster/' ~/.zshrc
 sed -i -e 's/# CASE_SENSITIVE/CASE_SENSITIVE/' ~/.zshrc
 case `uname` in
   Linux) echo 'eval $( dircolors -b ~/.dotfiles/dircolors/dircolors.ansi-universal ) ' >> ~/.zshrc ;;
