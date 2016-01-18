@@ -18,9 +18,6 @@ git submodule update
 cd vim/bundle/nerdtree
 git checkout master
 cd ~/.dotfiles
-cd vim/bundle/powerline
-git checkout develop
-cd ~/.dotfiles
 cd dircolors
 git checkout master
 
