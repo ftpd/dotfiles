@@ -1,4 +1,4 @@
 set background=dark
-colorscheme solarized
+colorscheme monokai
 set guifont=Menlo:h11
 set guioptions-=rL
