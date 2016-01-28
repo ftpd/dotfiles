@@ -3,6 +3,7 @@ version 7.3.754
 syntax on
 set encoding=utf-8
 set background=dark
+let g:solarized_termcolors=256
 colorscheme solarized
 hi BadWhitespace ctermbg=red guibg=red
 
