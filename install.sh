@@ -5,7 +5,7 @@ rm -rf ~/.dotfiles ~/.oh-my-zsh ~/.zshrc ~/.vim ~/.vimrc ~/.gvimrc ~/.gitignore 
 
 # repos
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-if [ `whoami` = "ftpd" ] || [ `whoami` = "bartek.stalewski" ]; then
+if [ `whoami` = "f" ] || [ `whoami` = "ftpd" ] || [ `whoami` = "bartek.stalewski" ]; then
   path="git@bitbucket.org:ftpd/dotfiles.git"
 else
   path="https://bitbucket.org/ftpd/dotfiles.git"
