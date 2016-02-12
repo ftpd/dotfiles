@@ -1,4 +1,4 @@
 set background=dark
 colorscheme solarized
-set guifont=Menlo:h11
+set guifont=SauceCodePro+Powerline+Awesome\ Regular\ Nerd\ Font
 set guioptions-=rL
