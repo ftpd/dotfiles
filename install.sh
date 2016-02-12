@@ -25,7 +25,11 @@ git checkout master
 
 ## zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-sed -i -e 's/robbyrussell/nicoulaj/' ~/.zshrc
+mkdir ~/.oh-my-zsh/custom/themes
+cp ~/.dotfiles/zshrc.powerlevel ~/.zshrc.powerlevel
+cd ~/.oh-my-zsh/custom/themes
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+sed -i -e 's/ZSH_THEME="robbyrussell"/"ZSH_THEME="powerlevel9k\/powerlevel9k && source ~/.zshrc.powerlevel'
 sed -i -e 's/# CASE_SENSITIVE/CASE_SENSITIVE/' ~/.zshrc
 case `uname` in
   Linux) echo 'eval $( dircolors -b ~/.dotfiles/dircolors/dircolors.ansi-universal ) ' >> ~/.zshrc ;;
