@@ -1,4 +1,4 @@
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 set guifont=SauceCodePro+Powerline+Awesome\ Regular\ Nerd\ Font
 set guioptions-=rL
