@@ -1,4 +1,4 @@
-version 7.3.754
+version 7.4
 
 syntax on
 set encoding=utf-8
@@ -6,7 +6,6 @@ set background=dark
 colorscheme gruvbox
 hi BadWhitespace ctermbg=red guibg=red
 
-set t_Co=256
 set gdefault
 set nobackup
 set nodigraph
