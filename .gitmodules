@@ -10,3 +10,6 @@
 [submodule "vim/bundle/vim-bad-whitespace"]
 	path = vim/bundle/vim-bad-whitespace
 	url = https://github.com/bitc/vim-bad-whitespace
+[submodule "vim/bundle/vim-airline-themes"]
+	path = vim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
