@@ -1,3 +1,2 @@
 colorscheme luna
 set guifont=SauceCodePro+Powerline+Awesome\ Regular\ Nerd\ Font
-"let g:airline_theme='luna'
