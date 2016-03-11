@@ -31,10 +31,10 @@ cd ~/.oh-my-zsh/custom/themes
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 sed -i -e 's,ZSH_THEME="robbyrussell",ZSH_THEME="powerlevel9k/powerlevel9k" \&\& source ~/.zshrc.powerlevel,' ~/.zshrc
 sed -i -e 's/# CASE_SENSITIVE/CASE_SENSITIVE/' ~/.zshrc
-case `uname` in
-  Linux) echo 'eval $( dircolors -b ~/.dotfiles/dircolors/dircolors.ansi-universal ) ' >> ~/.zshrc ;;
-  Darwin) echo 'eval $( gdircolors -b ~/.dotfiles/dircolors/dircolors.ansi-universal ) ' >> ~/.zshrc ;;
-esac
+#case `uname` in
+#  Linux) echo 'eval $( dircolors -b ~/.dotfiles/dircolors/dircolors.ansi-universal ) ' >> ~/.zshrc ;;
+#  Darwin) echo 'eval $( gdircolors -b ~/.dotfiles/dircolors/dircolors.ansi-universal ) ' >> ~/.zshrc ;;
+#esac
 echo "zstyle ':vcs_info:*' enable hg bzr git svn" >> ~/.zshrc
 echo 'ZSH_THEME="powerlevel9k/powerlevel9k" && source ~/.zshrc.powerlevel' >> ~/.zshrc
 echo "[ -e ~/.zshrc.local ] && source ~/.zshrc.local" >> ~/.zshrc
