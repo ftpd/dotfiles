@@ -25,8 +25,9 @@ cd ~/.dotfiles
 
 ## zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-sed -i -e 's,ZSH_THEME="robbyrussell",ZSH_THEME="agnoster"' ~/.zshrc
+sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/' ~/.zshrc
 sed -i -e 's/# CASE_SENSITIVE/CASE_SENSITIVE/' ~/.zshrc
+echo "export DEFAULT_USER=$LOGNAME" >> ~/.zshrc
 echo "zstyle ':vcs_info:*' enable hg bzr git svn" >> ~/.zshrc
 echo "[ -e ~/.zshrc.local ] && source ~/.zshrc.local" >> ~/.zshrc
 source ~/.zshrc
