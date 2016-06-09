@@ -18,8 +18,8 @@ set nowritebackup
 
 set title
 set number
-set showcmd "show combo command as you type it in the bottom right corner
-set showmode "show what mode you're in (Insert, Replace, Visual, etc.)
+"set showcmd "show combo command as you type it in the bottom right corner
+set noshowmode "don't show what mode
 set ruler laststatus=2 "show rulers for buffers and the status line even if there's only 1 file
 set clipboard+=unnamed "the same clipboard is used for Visual mode
 set ignorecase smartcase "when searching, match case only when at least one char is upper
@@ -37,7 +37,7 @@ set bs=2
 
 nmap <tab> w
 nmap  :wq!
-imap  <BS>
+nmap  <BS>
 
 map <leader>b  <Esc>:set cc=79<CR>
 map <leader>nb <Esc>:set cc=0<CR>
@@ -54,12 +54,17 @@ nnoremap n nzzzv
 nnoremap N Nzzzv¬
 
 au BufRead,BufNewFile *.pp
-	\ set filetype=puppet
-au BufRead,BufNewFile *_spec.rb
-	\ nmap <F8> :!rspec --color %<CR>
+  \ set filetype=puppet
 filetype plugin indent on
 
-
-"====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
+
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='powerlineish'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
