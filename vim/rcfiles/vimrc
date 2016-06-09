@@ -46,7 +46,6 @@ map <leader>\  <Esc>:setlocal nospell<CR>
 map <leader>pl <Esc>:setlocal spell spelllang=pl<CR>
 map <leader>en <Esc>:setlocal spell spelllang=en_gb<CR>
 map <leader>p  <Esc>:set paste!<CR>
-map <F2> :NERDTreeToggle<CR>
 
 call pathogen#runtime_append_all_bundles()
 
