@@ -3,7 +3,7 @@ version 7.4
 syntax on
 set encoding=utf-8
 set background=dark
-colorscheme gruvbox
+colorscheme smyck
 hi BadWhitespace ctermbg=red guibg=red
 
 set t_Co=256
