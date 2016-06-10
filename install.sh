@@ -4,7 +4,6 @@
 rm -rf ~/.dotfiles ~/.oh-my-zsh ~/.zshrc ~/.vim ~/.vimrc ~/.gvimrc ~/.gitignore ~/.tmux.conf
 
 # repos
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 if [ `whoami` = "f" ] || [ `whoami` = "ftpd" ] || [ `whoami` = "bartek.stalewski" ]; then
   path="git@bitbucket.org:ftpd/dotfiles.git"
 else
@@ -24,11 +23,15 @@ cd ~/.dotfiles
 # files
 
 ## zsh
+mkdir ~/.zsh
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/autosuggestions
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/' ~/.zshrc
 sed -i -e 's/# CASE_SENSITIVE/CASE_SENSITIVE/' ~/.zshrc
 echo 'export DEFAULT_USER=$LOGNAME' >> ~/.zshrc
 echo "zstyle ':vcs_info:*' enable hg bzr git svn" >> ~/.zshrc
+echo "[ -e ~/.zsh/autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 echo "[ -e ~/.zshrc.local ] && source ~/.zshrc.local" >> ~/.zshrc
 touch ~/.zshrc.local
 source ~/.zshrc
