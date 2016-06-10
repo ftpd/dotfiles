@@ -14,15 +14,9 @@ cd ~/.dotfiles
 rm -rf ~/.vim/bundle/*
 git submodule init
 git submodule update
-cd vim/bundle/nerdtree
-git checkout master
 cd ~/.dotfiles
-#cd dircolors
-#git checkout master
 
-# files
-
-## zsh
+# zsh
 mkdir ~/.zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/autosuggestions
