@@ -2,7 +2,7 @@ syntax on
 set encoding=utf-8
 set background=dark
 colorscheme smyck
-set guifont=MesloLGS\ Nerd\ Font:h11
+set guifont=MesloLGSDZ\ Nerd\ Font
 hi BadWhitespace ctermbg=red guibg=red
 
 set gdefault
@@ -49,13 +49,14 @@ au BufRead,BufNewFile *.pp
 filetype plugin indent on
 
 call plug#begin('~/.config/vim-plugins')
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'rodjek/vim-puppet'
 Plug 'godlygeek/tabular'
+Plug 'rodjek/vim-puppet'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'edkolev/tmuxline.vim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" has to be called as lat plugin
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 let g:airline_theme = 'powerlineish'
