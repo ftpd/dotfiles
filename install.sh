@@ -18,7 +18,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/autosugges
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/' ~/.zshrc
 sed -i -e 's/# CASE_SENSITIVE/CASE_SENSITIVE/' ~/.zshrc
-echo 'export DEFAULT_USER=$LOGNAME' >> ~/.zshrc
+if [ ! `whoami` = "root" ]; then
+  echo 'export DEFAULT_USER=$LOGNAME' >> ~/.zshrc
+fi
 echo "zstyle ':vcs_info:*' enable git svn" >> ~/.zshrc
 echo "[ -e ~/.zsh/autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 echo "[ -e ~/.zshrc.local ] && source ~/.zshrc.local" >> ~/.zshrc
