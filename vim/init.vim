@@ -44,14 +44,11 @@ map <leader>pl <Esc>:setlocal spell spelllang=pl<CR>
 map <leader>en <Esc>:setlocal spell spelllang=en_gb<CR>
 map <leader>p  <Esc>:set paste!<CR>
 
-"nnoremap n nzzzv
-"nnoremap N Nzzzv¬
-
 au BufRead,BufNewFile *.pp
   \ set filetype=puppet
 filetype plugin indent on
 
-call plug#begin('~/.config/nvim/plugins')
+call plug#begin('~/.config/vim-plugins')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rodjek/vim-puppet'
 Plug 'godlygeek/tabular'

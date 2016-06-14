@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # cleaning
-rm -rf ~/.dotfiles ~/.zsh ~/.oh-my-zsh ~/.zshrc ~/.vim ~/.vimrc ~/.config/nvim ~/.gitignore ~/.tmux.conf
+rm -rf ~/.dotfiles ~/.zsh ~/.oh-my-zsh ~/.zshrc ~/.vim ~/.vimrc ~/.config/nvim ~/.config/vim-plugins ~/.gitignore ~/.tmux.conf
 
 # repos
 if [ `whoami` = "f" ]; then
