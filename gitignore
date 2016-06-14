@@ -30,3 +30,4 @@ __pycache__
 *.egg-info
 # Mac OS X specific
 .DS_Store
+/vim/.netrwhist
