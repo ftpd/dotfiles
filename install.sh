@@ -10,11 +10,6 @@ else
   path="https://bitbucket.org/ftpd/dotfiles.git"
 fi
 git clone $path ~/.dotfiles
-cd ~/.dotfiles
-rm -rf ~/.vim/bundle/*
-git submodule init
-git submodule update
-cd ~/.dotfiles
 
 # zsh
 mkdir ~/.zsh
@@ -31,9 +26,9 @@ touch ~/.zshrc.local
 source ~/.zshrc
 
 # vim
-ln -sf ~/.dotfiles/vim ~/.vim
-ln -sf ~/.vim/rcfiles/vimrc ~/.vimrc
-ln -sf ~/.vim/rcfiles/gvimrc ~/.gvimrc
+#ln -sf ~/.dotfiles/vim ~/.vim
+#ln -sf ~/.vim/rcfiles/vimrc ~/.vimrc
+#ln -sf ~/.vim/rcfiles/gvimrc ~/.gvimrc
 
 # .gitignore
 ln -sf ~/.dotfiles/gitignore ~/.gitignore
