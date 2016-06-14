@@ -17,7 +17,6 @@ set number
 set noshowmode
 set ruler
 set laststatus=2
-set clipboard+=unnamed
 set ignorecase
 set smartcase
 set backspace=eol,start,indent
