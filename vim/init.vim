@@ -1,9 +1,8 @@
 syntax on
-set encoding=utf-8
 set background=dark
 colorscheme smyck
 set guifont=MesloLGSDZ\ Nerd\ Font
-hi BadWhitespace ctermbg=red guibg=red
+hi BadWhitespace ctermbg=lightblue guibg=lightblue
 
 set gdefault
 set nobackup
@@ -53,6 +52,7 @@ Plug 'godlygeek/tabular'
 Plug 'rodjek/vim-puppet'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'edkolev/tmuxline.vim'
+Plug 'bitc/vim-bad-whitespace'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " has to be called as lat plugin
