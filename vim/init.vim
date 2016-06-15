@@ -1,5 +1,3 @@
-syntax on
-
 set title
 set number
 set gdefault
@@ -57,10 +55,14 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
+syntax on
 colorscheme smyck
-set guifont=MesloLGSDZ\ Nerd\ Font:h11
 set background=dark
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
+
+if has("gui_running")
+  set guifont=MesloLGSDZ\ Nerd\ Font:h11
+endif
 
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#tabline#enabled = 1
