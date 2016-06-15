@@ -46,6 +46,7 @@ Plug 'godlygeek/tabular'
 Plug 'rodjek/vim-puppet'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/syntastic'
 Plug 'edkolev/tmuxline.vim'
 Plug 'brendonrapp/smyck-vim'
 Plug 'bitc/vim-bad-whitespace'
@@ -71,3 +72,9 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
