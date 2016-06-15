@@ -1,35 +1,32 @@
 syntax on
-set background=dark
-colorscheme smyck
-set guifont=MesloLGSDZ\ Nerd\ Font
-hi BadWhitespace ctermbg=lightblue guibg=lightblue
-
-set gdefault
-set nobackup
-set nodigraph
-set incsearch
-set nohlsearch
-set nojoinspaces
-set nowritebackup
 
 set title
 set number
-set noshowmode
-set ruler
-set laststatus=2
-set ignorecase
+set gdefault
+set wildmenu
+set nobackup
+set incsearch
+set expandtab
 set smartcase
-set backspace=eol,start,indent
-set winminheight=0
-set scrolloff=5
+set ignorecase
+set nohlsearch
+set noshowmode
+set autoindent
+set shiftround
 set cursorline
 set cursorcolumn
+set nojoinspaces
+set nowritebackup
 
-set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-set shiftround
-set autoindent
-set matchpairs+=(:),{:},[:],<:>,':',":"
 set bs=2
+set tabstop=2
+set scrolloff=5
+set laststatus=2
+set shiftwidth=2
+set softtabstop=2
+set winminheight=0
+set backspace=eol,start,indent
+set matchpairs+=(:),{:},[:],<:>,':',":"
 
 nmap <tab> w
 nmap  :wq!
@@ -51,12 +48,18 @@ Plug 'godlygeek/tabular'
 Plug 'rodjek/vim-puppet'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'edkolev/tmuxline.vim'
+Plug 'brendonrapp/smyck-vim'
 Plug 'bitc/vim-bad-whitespace'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" has to be called as lat plugin
+" has to be called as last plugin
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
+
+colorscheme smyck
+set guifont=MesloLGSDZ\ Nerd\ Font:h11
+set background=dark
+hi BadWhitespace ctermbg=lightblue guibg=lightblue
 
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#tabline#enabled = 1
