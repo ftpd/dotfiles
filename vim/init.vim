@@ -47,6 +47,7 @@ call plug#begin('~/.config/vim-plugins')
 Plug 'godlygeek/tabular'
 Plug 'rodjek/vim-puppet'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
 Plug 'edkolev/tmuxline.vim'
 Plug 'brendonrapp/smyck-vim'
 Plug 'bitc/vim-bad-whitespace'
