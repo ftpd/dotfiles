@@ -36,6 +36,9 @@ map <leader>\  <Esc>:setlocal nospell<CR>
 map <leader>pl <Esc>:setlocal spell spelllang=pl<CR>
 map <leader>en <Esc>:setlocal spell spelllang=en_gb<CR>
 map <leader>p  <Esc>:set paste!<CR>
+map <leader>gs <Esc>:Gstatus<CR>
+map <leader>gc <Esc>:Gcommit<CR>
+map <leader>gp <Esc>:Gpush<CR>
 
 au BufRead,BufNewFile *.pp
   \ set filetype=puppet
