@@ -35,6 +35,7 @@ ln -sf ~/.dotfiles/vim/init.vim ~/.vimrc
 
 # .gitignore
 ln -sf ~/.dotfiles/gitignore ~/.gitignore
+git config --global core.excludesfile ~/.gitignore
 
 # tmux
 ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
