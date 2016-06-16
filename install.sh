@@ -26,6 +26,6 @@ ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
 # fish
 touch ~/.fish.local
 mkdir -p ~/.config/fish/functions
-curl -L https://github.com/oh-my-fish/theme-agnoster/raw/master/fish_prompt.fish > .config/fish/functions/fish_prompt.fish
+curl -L https://github.com/oh-my-fish/theme-agnoster/raw/master/fish_prompt.fish > ~/.config/fish/functions/fish_prompt.fish
 echo 'set fish_greeting ""' >> ~/.config/fish/config.fish
 echo 'source ~/.fish.local' >> ~/.config/fish/config.fish
