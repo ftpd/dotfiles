@@ -79,7 +79,7 @@ let g:lightline = {
   \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
   \   'right': [ [ 'lineinfo' ],
   \              [ 'percent' ],
-  \              [ 'fileformat', 'fileencoding' ] ]
+  \              [ 'fileencoding' ] ]
   \ },
   \ 'component_function': {
   \   'fugitive': 'LightLineFugitive',
