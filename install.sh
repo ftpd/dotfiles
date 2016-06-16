@@ -26,6 +26,13 @@ ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
 # fish
 touch ~/.fish.local
 mkdir -p ~/.config/fish/functions
-curl -L https://github.com/oh-my-fish/theme-agnoster/raw/master/fish_prompt.fish > ~/.config/fish/functions/fish_prompt.fish
+#curl -L https://github.com/oh-my-fish/theme-agnoster/raw/master/fish_prompt.fish > ~/.config/fish/functions/fish_prompt.fish
+curl -sfL https://git.io/fundle-install | fish
+echo "fundle plugin 'hauleth/agnoster'" >> ~/.config/fish/config.fish
+echo "fundle init" >> ~/.config/fish/config.fish
 echo 'set fish_greeting ""' >> ~/.config/fish/config.fish
+if [ ! `whoami` = "root" ]; then
+  echo 'set -x DEFAULT_USER $LOGNAME' >> ~/.config/fish/config.fish
+fi
 echo 'source ~/.fish.local' >> ~/.config/fish/config.fish
+fish -c 'fundle install; agnoster powerline'
