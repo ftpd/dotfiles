@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # cleaning
-rm -rf ~/.dotfiles ~/.config/fish ~/.local/share/omf ~/.vim ~/.vimrc ~/.config/nvim ~/.config/vim-plugins ~/.gitignore ~/.tmux.conf
+rm -rf ~/.dotfiles ~/.vim* ~/.gitignore ~/.tmux.conf ~/.config/fish ~/.local/share/omf
 
 # repos
 if [ `whoami` = "f" ]; then
@@ -11,18 +11,9 @@ else
 fi
 git clone $path ~/.dotfiles
 
-# fish
-touch ~/.fish.local
-curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
-omf install agnoster
-omf theme agnoster
-echo 'set fish_greeting ""' >> ~/.config/fish/config.fish
-echo 'source ~/.fish.local' >> ~/.config/fish/config.fish
-
 # vim
 mkdir -p ~/.config
 ln -sf ~/.dotfiles/vim ~/.vim
-ln -sf ~/.dotfiles/vim ~/.config/nvim
 ln -sf ~/.dotfiles/vim/init.vim ~/.vimrc
 
 # .gitignore
@@ -31,3 +22,10 @@ git config --global core.excludesfile ~/.gitignore
 
 # tmux
 ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
+
+# fish
+touch ~/.fish.local
+mkdir -p ~/.config/fish/functions
+curl -L https://github.com/oh-my-fish/theme-agnoster/raw/master/fish_prompt.fish > .config/fish/functions/fish_prompt.fish
+echo 'set fish_greeting ""' >> ~/.config/fish/config.fish
+echo 'source ~/.fish.local' >> ~/.config/fish/config.fish
