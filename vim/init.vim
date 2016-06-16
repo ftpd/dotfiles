@@ -17,6 +17,7 @@ set nojoinspaces
 set nowritebackup
 
 set bs=2
+set diffopt+=vertical
 set tabstop=2
 set scrolloff=5
 set laststatus=2
@@ -36,8 +37,7 @@ map <leader>\  <Esc>:setlocal nospell<CR>
 map <leader>pl <Esc>:setlocal spell spelllang=pl<CR>
 map <leader>en <Esc>:setlocal spell spelllang=en_gb<CR>
 map <leader>p  <Esc>:set paste!<CR>
-map <leader>gs <Esc>:Gstatus<CR>
-map <leader>gc <Esc>:Gcommit<CR>
+map <leader>g  <Esc>:Gstatus<CR>
 map <leader>gp <Esc>:Gpush<CR>
 
 au BufRead,BufNewFile *.pp
@@ -51,12 +51,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'edkolev/tmuxline.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'brendonrapp/smyck-vim'
 Plug 'bitc/vim-bad-whitespace'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-" has to be called as last plugin
-Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 syntax on
@@ -65,18 +62,58 @@ set background=dark
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
 
 if has("gui_running")
+  set guioptions-=e
+  set guioptions-=r
+  set guioptions-=L
   set guifont=MesloLGSDZ\ Nerd\ Font:h11
 endif
-
-let g:airline_theme = 'powerlineish'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
 
 let g:syntastic_auto_jump = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_puppet_puppetlint_args = "--no-80chars-check --no-autoloader_layout-check --no-nested_classes_or_defines-check"
+
+let g:lightline = {
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
+  \   'right': [ [ 'lineinfo' ],
+  \              [ 'percent' ],
+  \              [ 'fileformat', 'fileencoding' ] ]
+  \ },
+  \ 'component_function': {
+  \   'fugitive': 'LightLineFugitive',
+  \   'readonly': 'LightLineReadonly',
+  \   'modified': 'LightLineModified'
+  \ },
+  \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+  \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
+  \ 'tabline_separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+  \ 'tabline_subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+  \ }
+
+function! LightLineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightLineReadonly()
+  if &filetype == "help" || &filetype == "gitcommit"
+    return ""
+  elseif &readonly
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightLineFugitive()
+  return exists('*fugitive#head') ? fugitive#head() : ''
+endfunction
