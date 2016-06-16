@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # cleaning
-rm -rf ~/.dotfiles ~/.vim* ~/.gitignore ~/.tmux.conf ~/.config/fish ~/.local/share/omf
+rm -rf ~/.dotfiles ~/.vim* ~/.gitignore ~/.tmux.conf ~/.config/fish
 
 # repos
 if [ `whoami` = "f" ]; then
