@@ -1,3 +1,3 @@
 function prompt_pwd
-  pwd | sed "s|$HOME|~|"
+  pwd | sed -e 's|/private||' -e "s|$HOME|~|"
 end
