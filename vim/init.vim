@@ -66,7 +66,7 @@ if has("gui_running")
   set guioptions-=e
   set guioptions-=r
   set guioptions-=L
-  set guifont=MesloLGSDZ\ Nerd\ Font:h13
+  set guifont=MesloLGSDZ\ Nerd\ Font:h12
 endif
 
 let g:syntastic_auto_jump = 1
