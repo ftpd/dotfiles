@@ -26,7 +26,7 @@ ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
 # fish
 touch ~/.fish.local
 mkdir -p ~/.config/fish/functions
-#curl -L https://github.com/oh-my-fish/theme-agnoster/raw/master/fish_prompt.fish > ~/.config/fish/functions/fish_prompt.fish
+ln -s ~/.dotfiles/fish/prompt_pwd.fish ~/.config/fish/functions
 curl -sfL https://git.io/fundle-install | fish
 echo "fundle plugin 'hauleth/agnoster'" >> ~/.config/fish/config.fish
 echo "fundle init" >> ~/.config/fish/config.fish
