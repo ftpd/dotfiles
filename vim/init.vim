@@ -72,7 +72,7 @@ endif
 let g:syntastic_auto_jump = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_puppet_puppetlint_args = "--no-80chars-check --no-autoloader_layout-check --no-nested_classes_or_defines-check"
+let g:syntastic_puppet_puppetlint_args = "--no-80chars-check --no-autoloader_layout-check --no-nested_classes_or_defines-check --no-only_variable_string-check"
 
 let g:lightline = {
   \ 'active': {
