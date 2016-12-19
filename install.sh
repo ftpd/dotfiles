@@ -38,9 +38,12 @@ ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
 rm -rf ~/.config/fish ~/.local/share/fish ~/.config/omf ~/.local/share/omf
 # installing omf
 curl -L http://get.oh-my.fish | fish
-fish -c 'omf install agnoster'
+fish -c 'omf install bobthefish'
 # installing misc settings
 touch ~/.fish.local
 mkdir -p ~/.config/fish/functions
 ln -s ~/.dotfiles/fish/prompt_pwd.fish ~/.config/fish/functions
+if [ `hostname` != 'tuonela' ]; then
+  echo 'set -g theme_display_user yes' > ~/.config/fish/config.fish
+fi
 echo 'source ~/.fish.local' >> ~/.config/fish/config.fish
