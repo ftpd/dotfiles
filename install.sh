@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # cleaning
-rm -rf ~/.dotfiles ~/.vim* ~/.gitignore ~/.tmux.conf ~/.config/fish
+rm -rf ~/.bash* ~/.profile
+rm -rf ~/.dotfiles
 
 # repos
 if [ `whoami` = "f" ]; then
@@ -11,28 +12,38 @@ else
 fi
 git clone $path ~/.dotfiles
 
-# vim
+## vim
+# cleaning
+rm -rf ~/.vim*
+# installing
 mkdir -p ~/.config
 ln -sf ~/.dotfiles/vim ~/.vim
 ln -sf ~/.dotfiles/vim/init.vim ~/.vimrc
 
-# .gitignore
+## .gitignore
+# cleaning
+rm -rf ~/.gitignore
+# installing
 ln -sf ~/.dotfiles/gitignore ~/.gitignore
 git config --global core.excludesfile ~/.gitignore
 
-# tmux
+## tmux
+# cleaning
+rm -rf ~/.tmux.conf
+# installing
 ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
 
-# fish
+## fish
+# cleaning
+rm -rf ~/.config/fish ~/.local/share/fish ~/.config/omf ~/.local/share/omf
+# installing omf
+curl -L http://get.oh-my.fish | fish
+fish -c 'omf install agnoster'
+# installing misc settings
 touch ~/.fish.local
 mkdir -p ~/.config/fish/functions
 ln -s ~/.dotfiles/fish/prompt_pwd.fish ~/.config/fish/functions
-curl -sfL https://git.io/fundle-install | fish
-echo "fundle plugin 'hauleth/agnoster'" >> ~/.config/fish/config.fish
-echo "fundle init" >> ~/.config/fish/config.fish
-echo 'set fish_greeting ""' >> ~/.config/fish/config.fish
 if [ ! `whoami` = "root" ]; then
   echo 'set -x DEFAULT_USER $LOGNAME' >> ~/.config/fish/config.fish
 fi
 echo 'source ~/.fish.local' >> ~/.config/fish/config.fish
-fish -c 'fundle install; agnoster powerline'
