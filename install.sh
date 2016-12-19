@@ -41,9 +41,8 @@ curl -L http://get.oh-my.fish | fish
 fish -c 'omf install bobthefish'
 # installing misc settings
 touch ~/.fish.local
-mkdir -p ~/.config/fish/functions
-ln -s ~/.dotfiles/fish/prompt_pwd.fish ~/.config/fish/functions
+echo 'set -g theme_title_use_abbreviated_path no' > ~/.config/fish/config.fish
 if [ `hostname` != 'tuonela' ]; then
-  echo 'set -g theme_display_user yes' > ~/.config/fish/config.fish
+  echo 'set -g theme_display_user yes' >> ~/.config/fish/config.fish
 fi
 echo 'source ~/.fish.local' >> ~/.config/fish/config.fish
