@@ -43,7 +43,4 @@ fish -c 'omf install agnoster'
 touch ~/.fish.local
 mkdir -p ~/.config/fish/functions
 ln -s ~/.dotfiles/fish/prompt_pwd.fish ~/.config/fish/functions
-if [ ! `whoami` = "root" ]; then
-  echo 'set -x DEFAULT_USER $LOGNAME' >> ~/.config/fish/config.fish
-fi
 echo 'source ~/.fish.local' >> ~/.config/fish/config.fish
