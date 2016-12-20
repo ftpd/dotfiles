@@ -37,8 +37,10 @@ ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
 # cleaning
 rm -rf ~/.config/fish ~/.local/share/fish ~/.config/omf ~/.local/share/omf
 # installing omf
-curl -L http://get.oh-my.fish | fish
+curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > ~/install.omf
+fish ~/install.omf --noninteractive
 fish -c 'omf install bobthefish'
+rm -rf ~/install.omf
 # installing misc settings
 mkdir -p ~/.config/fish/functions
 echo 'function fish_greeting; end' > ~/.config/fish/functions/fish_greeting.fish
