@@ -4,13 +4,8 @@
 rm -rf ~/.bash* ~/.profile
 rm -rf ~/.dotfiles
 
-# repos
-if [ `whoami` = "f" ]; then
-  path="git@bitbucket.org:ftpd/dotfiles.git"
-else
-  path="https://bitbucket.org/ftpd/dotfiles.git"
-fi
-git clone $path ~/.dotfiles
+# repo
+git clone https://bitbucket.org/ftpd/dotfiles.git ~/.dotfiles
 
 ## vim
 # cleaning
