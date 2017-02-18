@@ -54,6 +54,7 @@ Plug 'scrooloose/syntastic'
 Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'brendonrapp/smyck-vim'
+Plug 'pearofducks/ansible-vim'
 Plug 'bitc/vim-bad-whitespace'
 call plug#end()
 
