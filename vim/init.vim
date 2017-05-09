@@ -56,6 +56,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'brendonrapp/smyck-vim'
 Plug 'pearofducks/ansible-vim'
 Plug 'bitc/vim-bad-whitespace'
+Plug 'JamshedVesuna/vim-markdown-preview'
 call plug#end()
 
 syntax on
@@ -70,6 +71,7 @@ if has("gui_running")
   set guifont=MesloLGSDZ\ Nerd\ Font:h12
 endif
 
+let vim_markdown_preview_github=1
 let g:syntastic_auto_jump = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1

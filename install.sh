@@ -48,3 +48,4 @@ if [ `hostname` != 'tuonela' ]; then
   echo 'set -g theme_display_user yes' >> ~/.config/fish/config.fish
 fi
 echo 'source ~/.fish.local' >> ~/.config/fish/config.fish
+touch ~/.hushlogin
