@@ -68,7 +68,7 @@ if has("gui_running")
   set guioptions-=e
   set guioptions-=r
   set guioptions-=L
-  set guifont=MesloLGSDZ\ Nerd\ Font:h12
+  set guifont=Hack:h14
 endif
 
 let vim_markdown_preview_github=1
