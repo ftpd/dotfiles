@@ -39,7 +39,7 @@ rm -rf ~/install.omf
 # installing misc settings
 mkdir -p ~/.config/fish/functions
 echo 'function fish_greeting; end' > ~/.config/fish/functions/fish_greeting.fish
-echo 'function fish_right_prompt; end' > ~/.config/fish/functions/fish_right_prompt.fish
+#echo 'function fish_right_prompt; end' > ~/.config/fish/functions/fish_right_prompt.fish
 touch ~/.fish.local
 echo 'set -x VIRTUAL_ENV_DISABLE_PROMPT 1' > ~/.config/fish/config.fish
 echo 'set -g theme_title_use_abbreviated_path no' >> ~/.config/fish/config.fish
