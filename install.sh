@@ -44,8 +44,8 @@ touch ~/.fish.local
 echo 'set -x VIRTUAL_ENV_DISABLE_PROMPT 1' > ~/.config/fish/config.fish
 echo 'set -g theme_title_use_abbreviated_path no' >> ~/.config/fish/config.fish
 echo 'set -g fish_prompt_pwd_dir_length 0' >> ~/.config/fish/config.fish
-if [ `hostname` != 'tuonela' ]; then
-  echo 'set -g theme_display_user yes' >> ~/.config/fish/config.fish
-fi
+#if [ `hostname` != 'tuonela' ]; then
+#  echo 'set -g theme_display_user yes' >> ~/.config/fish/config.fish
+#fi
 echo 'source ~/.fish.local' >> ~/.config/fish/config.fish
 touch ~/.hushlogin
