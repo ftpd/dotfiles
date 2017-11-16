@@ -46,9 +46,7 @@ au BufRead,BufNewFile *.pp
 filetype plugin indent on
 
 call plug#begin('~/.config/vim-plugins')
-Plug 'mileszs/ack.vim'
 Plug 'godlygeek/tabular'
-Plug 'rodjek/vim-puppet'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
@@ -56,7 +54,6 @@ Plug 'scrooloose/syntastic'
 Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'brendonrapp/smyck-vim'
-Plug 'pearofducks/ansible-vim'
 Plug 'bitc/vim-bad-whitespace'
 Plug 'JamshedVesuna/vim-markdown-preview'
 call plug#end()
@@ -73,7 +70,6 @@ if has("gui_running")
   set guifont=Hack:h13
 endif
 
-cnoreabbrev Ack Ack!
 let vim_markdown_preview_github=1
 let g:syntastic_auto_jump = 1
 let g:syntastic_enable_signs = 1
@@ -124,7 +120,3 @@ endfunction
 function! LightLineFugitive()
   return exists('*fugitive#head') ? fugitive#head() : ''
 endfunction
-
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
