@@ -55,7 +55,6 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'brendonrapp/smyck-vim'
 Plug 'bitc/vim-bad-whitespace'
-Plug 'JamshedVesuna/vim-markdown-preview'
 call plug#end()
 
 syntax on
@@ -63,7 +62,6 @@ colorscheme smyck
 set background=dark
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
 
-let vim_markdown_preview_github=1
 let g:syntastic_auto_jump = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1
