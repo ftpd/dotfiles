@@ -9,11 +9,10 @@ git clone https://bitbucket.org/ftpd/dotfiles.git ~/.dotfiles
 
 ## vim
 # cleaning
-rm -rf ~/.vim*
+rm -rf ~/.config/nvim
 # installing
 mkdir -p ~/.config
-ln -sf ~/.dotfiles/vim ~/.vim
-ln -sf ~/.dotfiles/vim/init.vim ~/.vimrc
+ln -sf ~/.dotfiles/vim ~/.config/nvim
 
 ## .gitignore
 # cleaning
