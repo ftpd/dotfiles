@@ -49,7 +49,6 @@ call plug#begin('~/.config/vim-plugins')
 Plug 'godlygeek/tabular'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
