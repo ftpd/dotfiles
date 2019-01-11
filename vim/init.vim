@@ -60,6 +60,12 @@ syntax on
 colorscheme smyck
 set background=dark
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
+if has("gui_macvim")
+  set guioptions-=e
+  set guioptions-=r
+  set guioptions-=L
+  set guifont=Hack:h13
+endif
 
 let g:syntastic_auto_jump = 1
 let g:syntastic_enable_signs = 1
