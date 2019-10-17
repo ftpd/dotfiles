@@ -18,7 +18,6 @@ set nowritebackup
 
 set bs=2
 set shell=sh
-set diffopt+=vertical
 set tabstop=2
 set scrolloff=5
 set laststatus=2
