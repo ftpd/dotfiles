@@ -64,7 +64,7 @@ if has("gui_macvim")
   set guioptions-=e
   set guioptions-=r
   set guioptions-=L
-  set guifont=Hack:h12
+  set guifont=Hack:h13
 endif
 
 let g:syntastic_auto_jump = 1
