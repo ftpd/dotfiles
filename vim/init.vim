@@ -46,7 +46,6 @@ filetype plugin indent on
 
 call plug#begin('~/.config/vim-plugins')
 Plug 'godlygeek/tabular'
-Plug 'rodjek/vim-puppet'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
