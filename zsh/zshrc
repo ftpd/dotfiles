@@ -1,10 +1,9 @@
-export ZSH=$HOME/.oh-my-zsh
-CASE_SENSITIVE="true"
-ENABLE_CORRECTION="true"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-source $ZSH/oh-my-zsh.sh
-
-source ~/.oh-my-zsh/custom/themes/slimline/slimline.zsh
+autoload -U compinit && compinit
+alias ll='ls -lh'
+alias ls='ls -G'
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/themes/slimline/slimline.zsh
 SLIMLINE_USER_HOST_INFO_FORMAT="%F{green}|user|%F{white}@%F{cyan}|host|%f"
 SLIMLINE_USER_HOST_INFO_ROOT_FORMAT="%F{red}|user|%F{white}@%F{cyan}|host|%f"
 SLIMLINE_SYMBOL_WORKING_FORMAT="%F{red}➜%f"

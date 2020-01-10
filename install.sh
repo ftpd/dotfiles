@@ -31,13 +31,12 @@ ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
 
 ## zsh
 # cleaning
-rm -rf ~/.zshrc ~/.oh-my-zsh
+rm -rf ~/.zsh ~/.zshrc
+mkdir -p ~/.zsh/plugins ~/.zsh/themes
 # dependiences
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-git clone --recursive https://github.com/mengelbrecht/slimline.git ~/.oh-my-zsh/custom/themes/slimline
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/plugins/zsh-syntax-highlighting
+git clone --recursive https://github.com/mengelbrecht/slimline.git ~/.zsh/themes/slimline
 # install
-cp ~/.dotfiles/zsh/zshrc ~/.zshrc
+ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
 touch ~/.zshrc.local
-source ~/.zshrc
