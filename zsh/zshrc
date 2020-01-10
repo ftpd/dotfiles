@@ -6,6 +6,7 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.oh-my-zsh/custom/themes/slimline/slimline.zsh
 SLIMLINE_USER_HOST_INFO_FORMAT="%F{green}|user|%F{white}@%F{cyan}|host|%f"
+SLIMLINE_USER_HOST_INFO_ROOT_FORMAT="%F{red}|user|%F{white}@%F{cyan}|host|%f"
 SLIMLINE_SYMBOL_WORKING_FORMAT="%F{red}➜%f"
 SLIMLINE_SYMBOL_READY_FORMAT="%F{white}➜%f"
 SLIMLINE_MAX_EXEC_TIME=2
