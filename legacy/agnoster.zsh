@@ -1,3 +1,4 @@
+git clone https://github.com/popstas/zsh-command-time.git ~/.oh-my-zsh/custom/plugins/command-time
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 CASE_SENSITIVE="true"

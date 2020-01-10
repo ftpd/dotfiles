@@ -32,12 +32,12 @@ ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
 ## zsh
 # cleaning
 rm -rf ~/.zsh* ~/.oh-my-zsh
-# installing
+# dependiences
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-git clone https://github.com/popstas/zsh-command-time.git ~/.oh-my-zsh/custom/plugins/command-time
 git clone --recursive https://github.com/mengelbrecht/slimline.git ~/.oh-my-zsh/custom/themes/slimline
+# install
 cp ~/.dotfiles/zsh/zshrc ~/.zshrc
 touch ~/.zshrc.local
 source ~/.zshrc
