@@ -37,13 +37,17 @@ mkdir ~/.zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git clone https://github.com/popstas/zsh-command-time.git ~/.oh-my-zsh/custom/plugins/command-time
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/' ~/.zshrc
-sed -i -e 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
+sed -i -e 's/plugins=(git)/plugins=(git kube-ps1 command-time zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
 sed -i -e 's/# CASE_SENSITIVE/CASE_SENSITIVE/' ~/.zshrc
 if [ ! `whoami` = "root" ]; then
   echo 'export DEFAULT_USER=$LOGNAME' >> ~/.zshrc
 fi
+echo "PROMPT=\$PROMPT'\$(kube_ps1) '" >> ~/.zshrc
+echo "ZSH_COMMAND_TIME_MIN_SECONDS=2" >> ~/.zshrc
+echo 'ZSH_COMMAND_TIME_MSG="(took $fg[yellow]%s$fg[default])"' >> ~/.zshrc
 echo "[ -e ~/.zshrc.local ] && source ~/.zshrc.local" >> ~/.zshrc
 touch ~/.zshrc.local
 source ~/.zshrc
