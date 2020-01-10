@@ -1,4 +1,5 @@
 autoload -U compinit && compinit
+setopt correct_all
 alias ll='ls -lh'
 alias ls='ls -G'
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
