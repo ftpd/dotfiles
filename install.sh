@@ -31,7 +31,7 @@ ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
 
 ## zsh
 # cleaning
-rm -rf ~/.zsh* ~/.oh-my-zsh
+rm -rf ~/.zshrc ~/.oh-my-zsh
 # dependiences
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
