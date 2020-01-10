@@ -1,7 +1,11 @@
-autoload -U compinit && compinit
 setopt correct_all
+autoload -U compinit && compinit
+if [[ "$OSTYPE" == (darwin|freebsd)* ]]; then
+  alias ls='ls -G'
+elif [[ "$OSTYPE" == linux* ]]; then
+  alias ls='ls --color=tty'
+fi
 alias ll='ls -lh'
-alias ls='ls -G'
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/themes/slimline/slimline.zsh
