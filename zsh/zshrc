@@ -15,11 +15,11 @@ source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.dotfiles/zsh/k8s.zsh
 
-SLIMLINE_RIGHT_PROMPT_SECTIONS="execution_time git aws_profile virtualenv k8s_context"
+SLIMLINE_RIGHT_PROMPT_SECTIONS="execution_time git virtualenv aws_profile k8s_context"
 SLIMLINE_USER_HOST_INFO_FORMAT="%F{green}|user|%F{white}@%F{cyan}|host|%f"
 SLIMLINE_USER_HOST_INFO_ROOT_FORMAT="%F{red}|user|%F{white}@%F{cyan}|host|%f"
-SLIMLINE_VIRTUALENV_FORMAT="%F{white}[venv:%F{blue}|basename|%F{white}]%f"
-SLIMLINE_AWS_PROFILE_FORMAT="%F{white}[aws:%F{blue}|profile|%F{white}]%f"
+SLIMLINE_VIRTUALENV_FORMAT="[venv:%F{blue}|basename|%f]"
+SLIMLINE_AWS_PROFILE_FORMAT="[aws:%F{blue}|profile|%f]"
 SLIMLINE_SYMBOL_WORKING_FORMAT="%F{red}➜%f"
 SLIMLINE_SYMBOL_READY_FORMAT="%F{243}➜%f"
 SLIMLINE_MAX_EXEC_TIME=2
