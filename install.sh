@@ -36,7 +36,8 @@ mkdir -p ~/.zsh/plugins ~/.zsh/themes
 # dependiences
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/plugins/zsh-syntax-highlighting
-git clone --recursive https://github.com/mengelbrecht/slimline.git ~/.zsh/themes/slimline
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 # install
 ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
+ln -sf ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 touch ~/.zshrc.local
