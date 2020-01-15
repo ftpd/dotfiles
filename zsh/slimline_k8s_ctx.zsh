@@ -4,7 +4,6 @@ slimline::section::k8s_context::precmd() {
 
 slimline::section::k8s_context::async_task() {
   kubectl config current-context
-  # gsed -nr '/current-context/s/(.*) (.*)/\2/p' ~/.kube/config
 }
 
 slimline::section::k8s_context::async_task_complete() {
@@ -14,6 +13,6 @@ slimline::section::k8s_context::async_task_complete() {
 slimline::section::k8s_context::render() {
   [[ -z "${slimline_section_k8s_context_output}" ]] && return
 
-  slimline::utils::expand "k8s_context" "[k8s:%F{blue}|output|%f]" \
-      "output" "${slimline_section_k8s_context_output}" \
+  slimline::utils::expand "k8s_context" "ctx:%F{blue}|output|%f" \
+    "output" "${slimline_section_k8s_context_output}"
 }
