@@ -13,6 +13,6 @@ slimline::section::k8s_namespace::async_task_complete() {
 slimline::section::k8s_namespace::render() {
   [[ -z "${slimline_section_k8s_namespace_output}" ]] && return
 
-  slimline::utils::expand "k8s_namespace" "ns:%F{blue}|output|%f" \
+  slimline::utils::expand "k8s_namespace" "(%F{blue}|output|%f)" \
     "output" "${slimline_section_k8s_namespace_output}"
 }

@@ -13,6 +13,6 @@ slimline::section::k8s_context::async_task_complete() {
 slimline::section::k8s_context::render() {
   [[ -z "${slimline_section_k8s_context_output}" ]] && return
 
-  slimline::utils::expand "k8s_context" "ctx:%F{blue}|output|%f" \
+  slimline::utils::expand "k8s_context" "%F{blue}\U2388 |output|%f" \
     "output" "${slimline_section_k8s_context_output}"
 }
