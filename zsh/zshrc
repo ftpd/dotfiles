@@ -16,16 +16,4 @@ source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-#function zsh_directory_name() {
-#  emulate -L zsh
-#  [[ $1 == d ]] || return
-#  while [[ $2 != / ]]; do
-#    if [[ -e $2/.git ]]; then
-#      typeset -ga reply=(${2:t} $#2)
-#      return
-#    fi
-#    2=${2:h}
-#  done
-#  return 1
-#}
 [ -e ~/.zshrc.local ] && source ~/.zshrc.local
