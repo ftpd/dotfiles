@@ -52,8 +52,8 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'brendonrapp/smyck-vim'
 Plug 'bitc/vim-bad-whitespace'
-+Plug '/usr/local/opt/fzf'
-+Plug 'junegunn/fzf.vim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 syntax on
