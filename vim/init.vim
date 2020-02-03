@@ -15,6 +15,7 @@ set cursorline
 set cursorcolumn
 set nojoinspaces
 set nowritebackup
+set termguicolors
 
 set bs=2
 set shell=sh
@@ -28,7 +29,7 @@ set backspace=eol,start,indent
 set matchpairs+=(:),{:},[:],<:>,':',":"
 
 nmap <tab> w
-nmap  :wq!
+nmap <Esc><CR> :wq!<CR>
 
 map <leader>b  <Esc>:set cc=79<CR>
 map <leader>nb <Esc>:set cc=0<CR>
@@ -38,6 +39,7 @@ map <leader>pl <Esc>:setlocal spell spelllang=pl<CR>
 map <leader>en <Esc>:setlocal spell spelllang=en_gb<CR>
 map <leader>p  <Esc>:set paste!<CR>
 map <leader>g  <Esc>:Gstatus<CR>
+map <leader>gc <Esc>:Gcommit<CR>
 map <leader>gp <Esc>:Gpush<CR>
 
 au BufRead,BufNewFile *.pp
