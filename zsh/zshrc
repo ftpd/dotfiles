@@ -14,6 +14,6 @@ source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 FZF_DEFAULT_COMMAND='git ls-files --cached --others --exclude-standard | fd'
-FZF_DEFAULT_OPTS="-e --height 40% --preview='bat --color=always --tabs=2 --style=plain {}'"
+FZF_DEFAULT_OPTS="-e --height 40% --preview='bat --color=always --tabs=2 --style=plain --theme=\"Monokai Extended\" {}'"
 
 [ -e ~/.zshrc.local ] && source ~/.zshrc.local
