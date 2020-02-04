@@ -5,7 +5,7 @@ rm -rf ~/.bash* ~/.profile
 rm -rf ~/.dotfiles
 
 # repo
-git clone https://github.com/ftpd/dotfiles.git ~/.dotfiles
+git clone git@github.com:ftpd/dotfiles.git ~/.dotfiles
 
 ## vim
 # cleaning
