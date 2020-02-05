@@ -15,7 +15,6 @@ set cursorline
 set cursorcolumn
 set nojoinspaces
 set nowritebackup
-set termguicolors
 
 set bs=2
 set shell=sh
@@ -28,8 +27,9 @@ set winminheight=0
 set backspace=eol,start,indent
 set matchpairs+=(:),{:},[:],<:>,':',":"
 
-nmap <tab> w
+nmap <tab> <C-w>w
 nmap <Esc><CR> :wq!<CR>
+nmap <C-p> :Files<CR>
 
 map <leader>b  <Esc>:set cc=79<CR>
 map <leader>nb <Esc>:set cc=0<CR>
@@ -52,14 +52,15 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'brendonrapp/smyck-vim'
 Plug 'bitc/vim-bad-whitespace'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'fatih/molokai'
 call plug#end()
 
 syntax on
-colorscheme smyck
+colorscheme molokai
+let g:rehash256=1
 set background=dark
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
 if has("gui_macvim")
@@ -68,6 +69,9 @@ if has("gui_macvim")
   set guioptions-=L
   set guifont=Hack:h13
 endif
+
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--height=80%', '--preview', 'bat --color=always --tabs=2 --style=plain --theme="Monokai Extended" {}']}, <bang>0)
 
 let g:syntastic_auto_jump = 1
 let g:syntastic_enable_signs = 1
