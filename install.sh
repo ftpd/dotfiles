@@ -33,7 +33,7 @@ ln -sf ~/.dotfiles/conf/fdignore ~/.fdignore
 # cleaning
 rm -rf ~/.tmux.conf
 # installing
-ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
+ln -sf ~/.dotfiles/conf/tmux.conf ~/.tmux.conf
 
 ## zsh
 # cleaning
