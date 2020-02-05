@@ -15,6 +15,7 @@ set cursorline
 set cursorcolumn
 set nojoinspaces
 set nowritebackup
+set termguicolors
 
 set bs=2
 set tabstop=2
@@ -47,15 +48,15 @@ au BufRead,BufNewFile *.pp
 filetype plugin indent on
 
 call plug#begin('~/.config/vim-plugins')
+Plug 'fatih/molokai'
 Plug 'godlygeek/tabular'
+Plug  'junegunn/fzf.vim'
+Plug '/usr/local/opt/fzf'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'bitc/vim-bad-whitespace'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'fatih/molokai'
 call plug#end()
 
 syntax on
