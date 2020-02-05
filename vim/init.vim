@@ -17,7 +17,6 @@ set nojoinspaces
 set nowritebackup
 
 set bs=2
-set shell=sh
 set tabstop=2
 set scrolloff=5
 set laststatus=2
@@ -30,6 +29,7 @@ set matchpairs+=(:),{:},[:],<:>,':',":"
 nmap <tab> <C-w>w
 nmap <Esc><CR> :wq!<CR>
 nmap <C-p> :Files<CR>
+nmap <C-j> :term<CR>
 
 map <leader>b  <Esc>:set cc=79<CR>
 map <leader>nb <Esc>:set cc=0<CR>
