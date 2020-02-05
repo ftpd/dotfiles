@@ -13,7 +13,8 @@ source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-FZF_DEFAULT_COMMAND='git ls-files --cached --others --exclude-standard | fd'
-FZF_DEFAULT_OPTS="-e --layout=reverse --height=40% --preview='bat --color=always --tabs=2 --style=plain --theme=\"Monokai Extended\" {}'"
+export FZF_DEFAULT_COMMAND='git ls-files --cached --others --exclude-standard 2>/dev/null|fd -H'
+export FZF_CTRL_T_COMMAND='git ls-files --cached --others --exclude-standard 2>/dev/null|fd -H'
+export FZF_DEFAULT_OPTS="-e --layout=reverse --height=40% --preview='bat --color=always --tabs=2 --style=plain --theme=\"Monokai Extended\" {}'"
 
 [ -e ~/.zshrc.local ] && source ~/.zshrc.local
