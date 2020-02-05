@@ -49,9 +49,9 @@ filetype plugin indent on
 
 call plug#begin('~/.config/vim-plugins')
 Plug 'fatih/molokai'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
-Plug  'junegunn/fzf.vim'
-Plug '/usr/local/opt/fzf'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'edkolev/tmuxline.vim'
