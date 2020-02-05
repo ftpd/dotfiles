@@ -82,42 +82,19 @@ let g:syntastic_puppet_puppetlint_args = "--no-80chars-check --no-autoloader_lay
 let g:lightline = {
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
+  \             [ 'fugitive', 'readonly', 'filename' ] ],
   \   'right': [ [ 'lineinfo' ],
   \              [ 'percent' ],
-  \              [ 'fileencoding' ] ]
+  \              [ 'filetype' ] ]
   \ },
   \ 'component_function': {
   \   'fugitive': 'LightLineFugitive',
   \   'readonly': 'LightLineReadonly',
-  \   'modified': 'LightLineModified'
-  \ },
-  \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-  \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
-  \ 'tabline_separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-  \ 'tabline_subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+  \   'modified': 'LightLineModified'}
   \ }
 
-function! LightLineModified()
-  if &filetype == "help"
-    return ""
-  elseif &modified
-    return "+"
-  elseif &modifiable
-    return ""
-  else
-    return ""
-  endif
-endfunction
-
 function! LightLineReadonly()
-  if &filetype == "help" || &filetype == "gitcommit"
-    return ""
-  elseif &readonly
-    return ""
-  else
-    return ""
-  endif
+  return &readonly && &filetype !=# 'help' ? 'RO' : ''
 endfunction
 
 function! LightLineFugitive()
