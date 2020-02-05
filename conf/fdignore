@@ -13,8 +13,12 @@ __pycache__
 .CFUserTextEncoding
 .fdignore
 .gitignore
-.DS_Store
-.huslogin
+.DS_Store*
+.hushlogin
+.lesshst
+._sync_*
+.localized
+.cache
 /vim/.netrwhist
 Music
 Movies
