@@ -20,8 +20,14 @@ ln -sf ~/.dotfiles/vim/init.vim ~/.vimrc
 # cleaning
 rm -rf ~/.gitignore
 # installing
-ln -sf ~/.dotfiles/gitignore ~/.gitignore
+ln -sf ~/.dotfiles/conf/gitignore ~/.gitignore
 git config --global core.excludesfile ~/.gitignore
+
+## .fdignore
+# cleaning
+rm -rf ~/.fdignore
+# installing
+ln -sf ~/.dotfiles/conf/fdignore ~/.fdignore
 
 ## tmux
 # cleaning

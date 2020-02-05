@@ -1,0 +1,11 @@
+*.pyc
+*.pyo
+__pycache__
+*.a
+*.o
+*.bak
+*.swp
+*~
+*.egg-info
+.DS_Store
+/vim/.netrwhist
