@@ -22,6 +22,7 @@ set tabstop=2
 set scrolloff=5
 set laststatus=2
 set shiftwidth=2
+set showtabline=2
 set softtabstop=2
 set winminheight=0
 set backspace=eol,start,indent
@@ -31,6 +32,10 @@ nmap <tab> <C-w>w
 nmap <Esc><CR> :wq!<CR>
 nmap <C-p> :Files<CR>
 nmap <C-j> :term<CR>
+nmap <C-n> :tabnew<CR>
+nmap <C-w> :tabclose<CR>
+nmap <C-Left> :tabprev<CR>
+nmap <C-Right> :tabnext<CR>
 
 map <leader>b  <Esc>:set cc=79<CR>
 map <leader>nb <Esc>:set cc=0<CR>
@@ -87,15 +92,10 @@ let g:lightline = {
   \              [ 'filetype' ] ]
   \ },
   \ 'component_function': {
-  \   'fugitive': 'LightLineFugitive',
-  \   'readonly': 'LightLineReadonly',
-  \   'modified': 'LightLineModified'}
+  \   'fugitive': 'FugitiveHead',
+  \   'readonly': 'LightLineReadonly'}
   \ }
 
 function! LightLineReadonly()
   return &readonly && &filetype !=# 'help' ? 'RO' : ''
-endfunction
-
-function! LightLineFugitive()
-  return exists('*fugitive#head') ? fugitive#head() : ''
 endfunction
