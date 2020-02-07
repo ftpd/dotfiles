@@ -494,7 +494,7 @@
   # Duration format: 1d 2h 3m 4s.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FORMAT='d h m s'
   # Custom icon.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_VISUAL_IDENTIFIER_EXPANSION=
+  # typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # Custom prefix.
   # typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PREFIX='%ftook '
 
@@ -960,7 +960,6 @@
       # '*prod*'  PROD    # These values are examples that are unlikely
       # '*test*'  TEST    # to match your needs. Customize them as needed.
       '*'       DEFAULT)
-  # AWS profile color.
   typeset -g POWERLEVEL9K_AWS_DEFAULT_FOREGROUND=208
   # typeset -g POWERLEVEL9K_AWS_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
@@ -979,7 +978,7 @@
   # Custom icon.
   # typeset -g POWERLEVEL9K_AZURE_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
-  ##########[ gcloud: google cloud acccount and project (https://cloud.google.com/) ]###########
+  ##########[ gcloud: google cloud account and project (https://cloud.google.com/) ]###########
   # Show gcloud only when the the command you are typing invokes one of these tools.
   # Tip: Remove the next line to always show gcloud.
   typeset -g POWERLEVEL9K_GCLOUD_SHOW_ON_COMMAND='gcloud|gcs'
@@ -1069,6 +1068,26 @@
   typeset -g POWERLEVEL9K_VPN_IP_INTERFACE='(wg|(.*tun))[0-9]*'
   # Custom icon.
   # typeset -g POWERLEVEL9K_VPN_IP_VISUAL_IDENTIFIER_EXPANSION='⭐'
+
+  ###########[ ip: ip address and bandwidth usage for a specified network interface ]###########
+  # IP color.
+  typeset -g POWERLEVEL9K_IP_FOREGROUND=38
+  # The following parameters are accessible within the expansion:
+  #
+  #   Parameter             | Meaning
+  #   ----------------------+---------------
+  #   P9K_IP_IP         | IP address
+  #   P9K_IP_INTERFACE  | network interface
+  #   P9K_IP_RX_BYTES   | total number of bytes received
+  #   P9K_IP_TX_BYTES   | total number of bytes sent
+  #   P9K_IP_RX_RATE    | receive rate (since last prompt)
+  #   P9K_IP_TX_RATE    | send rate (since last prompt)
+  typeset -g POWERLEVEL9K_IP_CONTENT_EXPANSION='$P9K_IP_IP %70F⇣$P9K_IP_RX_RATE %215F⇡$P9K_IP_TX_RATE'
+  # Show information for the first network interface whose name matches this regular expression.
+  # Run `ifconfig` or `ip -4 a show` to see the names of all network interfaces.
+  typeset -g POWERLEVEL9K_IP_INTERFACE='e.*'
+  # Custom icon.
+  # typeset -g POWERLEVEL9K_IP_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   #########################[ proxy: system-wide http/https/ftp proxy ]##########################
   # Proxy color.
@@ -1172,7 +1191,7 @@
   #   - always:   Trim down prompt when accepting a command line.
   #   - same-dir: Trim down prompt when accepting a command line unless this is the first command
   #               typed after changing current working directory.
-  typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=off
+  typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=same-dir
 
   # Instant prompt mode.
   #
