@@ -42,9 +42,6 @@ nmap <C-Right> :tabnext<CR>
 map <leader>b  <Esc>:set cc=79<CR>
 map <leader>nb <Esc>:set cc=0<CR>
 map <leader>n  <Esc>:set nonumber!<CR>
-map <leader>\  <Esc>:setlocal nospell<CR>
-map <leader>pl <Esc>:setlocal spell spelllang=pl<CR>
-map <leader>en <Esc>:setlocal spell spelllang=en_gb<CR>
 map <leader>p  <Esc>:set paste!<CR>
 map <leader>g  <Esc>:Gstatus<CR>
 map <leader>gc <Esc>:Gcommit<CR>
