@@ -6,6 +6,8 @@ set nobackup
 set incsearch
 set expandtab
 set smartcase
+set splitbelow
+set splitright
 set ignorecase
 set nohlsearch
 set noshowmode
@@ -33,7 +35,7 @@ nmap <Esc><CR> :wq!<CR>
 nmap <C-p> :Files<CR>
 nmap <C-j> :term<CR>
 nmap <C-n> :tabnew<CR>
-nmap <C-w> :tabclose<CR>
+nmap <C-q> :tabclose<CR>
 nmap <C-Left> :tabprev<CR>
 nmap <C-Right> :tabnext<CR>
 
