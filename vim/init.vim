@@ -54,6 +54,7 @@ call plug#begin('~/.config/vim-plugins')
 Plug 'fatih/molokai'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'rodjek/vim-puppet'
 Plug 'tpope/vim-fugitive'
 Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
