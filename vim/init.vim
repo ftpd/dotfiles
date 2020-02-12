@@ -18,6 +18,7 @@ set cursorcolumn
 set nojoinspaces
 set nowritebackup
 set termguicolors
+set relativenumber
 
 set bs=2
 set tabstop=2
@@ -41,14 +42,12 @@ nmap <C-Right> :tabnext<CR>
 
 map <leader>b  <Esc>:set cc=79<CR>
 map <leader>nb <Esc>:set cc=0<CR>
-map <leader>n  <Esc>:set nonumber!<CR>
+map <leader>n  <Esc>:set nonumber! norelativenumber!<CR>
 map <leader>p  <Esc>:set paste!<CR>
 map <leader>g  <Esc>:Gstatus<CR>
 map <leader>gc <Esc>:Gcommit<CR>
 map <leader>gp <Esc>:Gpush<CR>
 
-au BufRead,BufNewFile *.pp
-  \ set filetype=puppet
 filetype plugin indent on
 
 call plug#begin('~/.config/vim-plugins')
@@ -58,6 +57,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'hashivim/vim-terraform'
 Plug 'bitc/vim-bad-whitespace'
 call plug#end()
 
