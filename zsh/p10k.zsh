@@ -242,23 +242,14 @@
   typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=false
   # Don't shorten directories that contain any of these files. They are anchors.
   local anchor_files=(
-    .bzr
-    .citc
     .git
-    .hg
-    .node-version
-    .python-version
-    .ruby-version
-    .shorten_folder_marker
-    .svn
-    .terraform
-    CVS
-    Cargo.toml
-    composer.json
-    go.mod
-    package.json
   )
   typeset -g POWERLEVEL9K_SHORTEN_FOLDER_MARKER="(${(j:|:)anchor_files})"
+  # If set to true, remove everything before the last (deepest) subdirectory that contains files
+  # matching $POWERLEVEL9K_SHORTEN_FOLDER_MARKER. For example, when the current directory is
+  # /foo/bar/git_repo/baz, prompt will display git_repo/baz. This assumes that /foo/bar/git_repo
+  # contains a marker (.git) and other directories don't.
+  typeset -g POWERLEVEL9K_DIR_TRUNCATE_BEFORE_MARKER=true
   # Don't shorten this many last directory segments. They are anchors.
   typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
   # Shorten directory if it's longer than this even if there is space for it. The value can
@@ -421,6 +412,20 @@
   }
   functions -M my_git_formatter 2>/dev/null
 
+  # Don't count the number of unstaged, untracked and conflicted files in Git repositories with
+  # more than this many files in the index. Negative value means infinity.
+  #
+  # If you are working in Git repositories with tens of millions of files and seeing performance
+  # sagging, try setting POWERLEVEL9K_VCS_MAX_INDEX_SIZE_DIRTY to a number lower than the output
+  # of `git ls-files | wc -l`. Alternatively, add `bash.showDirtyState = false` to the repository's
+  # config: `git config bash.showDirtyState false`.
+  typeset -g POWERLEVEL9K_VCS_MAX_INDEX_SIZE_DIRTY=-1
+
+  # Don't show Git status in prompt for repositories whose workdir matches this pattern.
+  # For example, if set to '~', the Git repository at $HOME/.git will be ignored.
+  # Multiple patterns can be combined with '|': '~|~/some/dir'.
+  typeset -g POWERLEVEL9K_VCS_DISABLED_WORKDIR_PATTERN='~'
+
   # Disable the default Git status formatting.
   typeset -g POWERLEVEL9K_VCS_DISABLE_GITSTATUS_FORMATTING=true
   # Install our own Git status formatter.
@@ -511,6 +516,135 @@
   typeset -g POWERLEVEL9K_DIRENV_FOREGROUND=178
   # Icon to show when direnv is active.
   typeset -g POWERLEVEL9K_DIRENV_VISUAL_IDENTIFIER_EXPANSION='${P9K_VISUAL_IDENTIFIER}'
+
+  ###############[ asdf: asdf version manager (https://github.com/asdf-vm/asdf) ]###############
+  # Default asdf color. Only used to display tools for which there is no color override (see below).
+  typeset -g POWERLEVEL9K_ASDF_FOREGROUND=66
+
+  # There are four parameters that can be used to hide asdf tools. Each parameter describes
+  # conditions under which a tool gets hidden. Parameters can hide tools but not unhide them. If at
+  # least one parameter decides to hide a tool, that tool gets hidden. If no parameter decides to
+  # hide a tool, it gets shown.
+  #
+  # Special note on the difference between POWERLEVEL9K_ASDF_SOURCES and
+  # POWERLEVEL9K_ASDF_PROMPT_ALWAYS_SHOW. Consider the effect of the following commands:
+  #
+  #   asdf local  python 3.8.1
+  #   asdf global python 3.8.1
+  #
+  # After running both commands the current python version is 3.8.1 and its source is "local" as
+  # it takes precedence over "global". If POWERLEVEL9K_ASDF_PROMPT_ALWAYS_SHOW is set to false,
+  # it'll hide python version in this case because 3.8.1 is the same as the global version.
+  # POWERLEVEL9K_ASDF_SOURCES will hide python version only if the value of this parameter doesn't
+  # contain "local".
+
+  # Hide tool versions that don't come from one of these sources.
+  #
+  # Available sources:
+  #
+  # - shell   `asdf current` says "set by ASDF_${TOOL}_VERSION environment variable"
+  # - local   `asdf current` says "set by /some/not/home/directory/file"
+  # - global  `asdf current` says "set by /home/username/file"
+  #
+  # Note: If this parameter is set to (shell local global), it won't hide tools.
+  # Tip:  Override this parameter for ${TOOL} with POWERLEVEL9K_ASDF_${TOOL}_SOURCES.
+  typeset -g POWERLEVEL9K_ASDF_SOURCES=(shell local global)
+
+  # If set to false, hide tool versions that are the same as global.
+  #
+  # Note: The name of this parameter doesn't reflect its meaning at all.
+  # Note: If this parameter is set to true, it won't hide tools.
+  # Tip:  Override this parameter for ${TOOL} with POWERLEVEL9K_ASDF_${TOOL}_PROMPT_ALWAYS_SHOW.
+  typeset -g POWERLEVEL9K_ASDF_PROMPT_ALWAYS_SHOW=false
+
+  # If set to false, hide tool versions that are equal to "system".
+  #
+  # Note: If this parameter is set to true, it won't hide tools.
+  # Tip: Override this parameter for ${TOOL} with POWERLEVEL9K_ASDF_${TOOL}_SHOW_SYSTEM.
+  typeset -g POWERLEVEL9K_ASDF_SHOW_SYSTEM=true
+
+  # If set to non-empty value, hide tools unless there is a file matching the specified file pattern
+  # in the current directory, or its parent diretory, or its grandparent directory, and so on.
+  #
+  # Note: If this parameter is set to empty value, it won't hide tools.
+  # Note: SHOW_ON_UPGLOB isn't specific to asdf. It works with all prompt segments.
+  # Tip: Override this parameter for ${TOOL} with POWERLEVEL9K_ASDF_${TOOL}_SHOW_ON_UPGLOB.
+  #
+  # Example: Hide nodejs version when there is no package.json and no *.js files in the current
+  # directory, in `..`, in `../..` and so on.
+  #
+  #   typeset -g POWERLEVEL9K_ASDF_NODEJS_SHOW_ON_UPGLOB='*.js|package.json'
+  typeset -g POWERLEVEL9K_ASDF_SHOW_ON_UPGLOB=
+
+  # Ruby version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_RUBY_FOREGROUND=168
+  # typeset -g POWERLEVEL9K_ASDF_RUBY_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_RUBY_SHOW_ON_UPGLOB='*.foo|*.bar'
+
+  # Python version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_PYTHON_FOREGROUND=37
+  # typeset -g POWERLEVEL9K_ASDF_PYTHON_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_PYTHON_SHOW_ON_UPGLOB='*.foo|*.bar'
+
+  # Go version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_GO_FOREGROUND=37
+  # typeset -g POWERLEVEL9K_ASDF_GO_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_GO_SHOW_ON_UPGLOB='*.foo|*.bar'
+
+  # Node.js version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_NODEJS_FOREGROUND=70
+  # typeset -g POWERLEVEL9K_ASDF_NODEJS_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_NODEJS_SHOW_ON_UPGLOB='*.foo|*.bar'
+
+  # Rust version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_RUST_FOREGROUND=37
+  # typeset -g POWERLEVEL9K_ASDF_RUST_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_RUST_SHOW_ON_UPGLOB='*.foo|*.bar'
+
+  # .NET Core version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_DOTNET_CORE_FOREGROUND=134
+  # typeset -g POWERLEVEL9K_ASDF_DOTNET_CORE_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_DOTNET_SHOW_ON_UPGLOB='*.foo|*.bar'
+
+  # Flutter version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_FLUTTER_FOREGROUND=38
+  # typeset -g POWERLEVEL9K_ASDF_FLUTTER_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_FLUTTER_SHOW_ON_UPGLOB='*.foo|*.bar'
+
+  # Lua version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_LUA_FOREGROUND=32
+  # typeset -g POWERLEVEL9K_ASDF_LUA_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_LUA_SHOW_ON_UPGLOB='*.foo|*.bar'
+
+  # Java version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_JAVA_FOREGROUND=32
+  # typeset -g POWERLEVEL9K_ASDF_JAVA_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_JAVA_SHOW_ON_UPGLOB='*.foo|*.bar'
+
+  # Perl version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_PERL_FOREGROUND=67
+  # typeset -g POWERLEVEL9K_ASDF_PERL_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_PERL_SHOW_ON_UPGLOB='*.foo|*.bar'
+
+  # Erlang version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_ERLANG_FOREGROUND=125
+  # typeset -g POWERLEVEL9K_ASDF_ERLANG_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_ERLANG_SHOW_ON_UPGLOB='*.foo|*.bar'
+
+  # Elixir version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_ELIXIR_FOREGROUND=129
+  # typeset -g POWERLEVEL9K_ASDF_ELIXIR_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_ELIXIR_SHOW_ON_UPGLOB='*.foo|*.bar'
+
+  # Postgres version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_POSTGRES_FOREGROUND=31
+  # typeset -g POWERLEVEL9K_ASDF_POSTGRES_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_POSTGRES_SHOW_ON_UPGLOB='*.foo|*.bar'
+
+  # PHP version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_PHP_FOREGROUND=99
+  # typeset -g POWERLEVEL9K_ASDF_PHP_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_PHP_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   ##########[ nordvpn: nordvpn connection status, linux only (https://nordvpn.com/) ]###########
   # NordVPN connection indicator color.
@@ -686,7 +820,7 @@
   ################[ goenv: go environment (https://github.com/syndbg/goenv) ]################
   # Goenv color.
   typeset -g POWERLEVEL9K_GOENV_FOREGROUND=37
-  # Don't show the current Go version if it's the same as global.
+  # Hide go version if it doesn't come from one of these sources.
   typeset -g POWERLEVEL9K_GOENV_SOURCES=(shell local global)
   # If set to false, hide go version if it's the same as global:
   # $(goenv version-name) == $(goenv global).
@@ -750,6 +884,20 @@
   # Custom icon.
   # typeset -g POWERLEVEL9K_DOTNET_VERSION_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
+  #####################[ php_version: php version (https://www.php.net/) ]######################
+  # PHP version color.
+  typeset -g POWERLEVEL9K_PHP_VERSION_FOREGROUND=99
+  # Show PHP version only when in a PHP project subdirectory.
+  typeset -g POWERLEVEL9K_PHP_VERSION_PROJECT_ONLY=true
+  # Custom icon.
+  # typeset -g POWERLEVEL9K_PHP_VERSION_VISUAL_IDENTIFIER_EXPANSION='⭐'
+
+  ##########[ laravel_version: laravel php framework version (https://laravel.com/) ]###########
+  # Laravel version color.
+  typeset -g POWERLEVEL9K_LARAVEL_VERSION_FOREGROUND=161
+  # Custom icon.
+  # typeset -g POWERLEVEL9K_LARAVEL_VERSION_VISUAL_IDENTIFIER_EXPANSION='⭐'
+
   #############[ rbenv: ruby version from rbenv (https://github.com/rbenv/rbenv) ]##############
   # Rbenv color.
   typeset -g POWERLEVEL9K_RBENV_FOREGROUND=168
@@ -809,6 +957,17 @@
   typeset -g POWERLEVEL9K_PLENV_PROMPT_ALWAYS_SHOW=false
   # Custom icon.
   # typeset -g POWERLEVEL9K_PLENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
+
+  ############[ phpenv: php version from phpenv (https://github.com/phpenv/phpenv) ]############
+  # PHP color.
+  typeset -g POWERLEVEL9K_PHPENV_FOREGROUND=99
+  # Hide php version if it doesn't come from one of these sources.
+  typeset -g POWERLEVEL9K_PHPENV_SOURCES=(shell local global)
+  # If set to false, hide php version if it's the same as global:
+  # $(phpenv version-name) == $(phpenv global).
+  typeset -g POWERLEVEL9K_PHPENV_PROMPT_ALWAYS_SHOW=false
+  # Custom icon.
+  # typeset -g POWERLEVEL9K_PHPENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   #############[ kubecontext: current kubernetes context (https://kubernetes.io/) ]#############
   # Show kubecontext only when the the command you are typing invokes one of these tools.
@@ -1063,8 +1222,8 @@
   # When on VPN, show just an icon without the IP address.
   # Tip: To display the private IP address when on VPN, remove the next line.
   typeset -g POWERLEVEL9K_VPN_IP_CONTENT_EXPANSION=
-  # Regular expression for the VPN network interface. Run ifconfig while on VPN to see the
-  # name of the interface.
+  # Regular expression for the VPN network interface. Run `ifconfig` or `ip -4 a show` while on VPN
+  # to see the name of the interface.
   typeset -g POWERLEVEL9K_VPN_IP_INTERFACE='(wg|(.*tun))[0-9]*'
   # Custom icon.
   # typeset -g POWERLEVEL9K_VPN_IP_VISUAL_IDENTIFIER_EXPANSION='⭐'
