@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# empty
 # cleaning
 rm -rf ~/.bash* ~/.profile
 rm -rf ~/.dotfiles
