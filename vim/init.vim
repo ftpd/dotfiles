@@ -60,7 +60,6 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'hashivim/vim-terraform'
-Plug 'vim-syntastic/syntastic'
 Plug 'bitc/vim-bad-whitespace'
 call plug#end()
 
@@ -69,30 +68,18 @@ colorscheme molokai
 let g:rehash256=1
 set background=dark
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
-if has("gui_macvim")
+if has("gui")
   set guioptions-=e
   set guioptions-=r
   set guioptions-=L
-  set guifont=Hack:h13
+  set guifont=Hack\ NF:h13
 endif
 
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--height=80%', '--preview', 'bat --color=always --tabs=2 --style=plain --theme="Monokai Extended" {}']}, <bang>0)
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_auto_jump = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_puppet_puppetlint_args = "--no-80chars-check --no-autoloader_layout-check --no-nested_classes_or_defines-check --no-only_variable_string-check"
-
 let g:lightline = {
-  \ 'colorscheme': 'wombat',
+  \ 'colorscheme': 'powerlineish',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'fugitive', 'readonly', 'filename' ] ],
@@ -102,7 +89,7 @@ let g:lightline = {
   \ },
   \ 'component_function': {
   \   'fugitive': 'FugitiveHead',
-  \   'readonly': 'LightLineReadonly'}
+  \   'readonly': 'LightLineReadonly'},
   \ }
 
 function! LightLineReadonly()
