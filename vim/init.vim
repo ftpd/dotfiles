@@ -47,6 +47,7 @@ map <leader>p  <Esc>:set paste!<CR>
 map <leader>g  <Esc>:Gstatus<CR>
 map <leader>gc <Esc>:Gcommit<CR>
 map <leader>gp <Esc>:Gpush<CR>
+map <leader>f  <Esc>:Goyo<CR>
 
 filetype plugin indent on
 
@@ -61,6 +62,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'hashivim/vim-terraform'
 Plug 'bitc/vim-bad-whitespace'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 call plug#end()
 
 syntax on
@@ -72,7 +75,7 @@ if has("gui")
   set guioptions-=e
   set guioptions-=r
   set guioptions-=L
-  set guifont=Hack\ NF:h13
+  set guifont=Hack\ NF:h14
 endif
 
 command! -bang -nargs=? -complete=dir Files
@@ -95,3 +98,6 @@ let g:lightline = {
 function! LightLineReadonly()
   return &readonly && &filetype !=# 'help' ? 'RO' : ''
 endfunction
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
