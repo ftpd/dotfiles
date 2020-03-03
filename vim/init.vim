@@ -5,13 +5,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'rodjek/vim-puppet'
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'dense-analysis/ale'
+Plug 'frazrepo/vim-rainbow'
 Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/limelight.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'bitc/vim-bad-whitespace'
-Plug 'frazrepo/vim-rainbow'
 call plug#end()
 
 set title
@@ -108,5 +109,5 @@ inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
-inoremap {<CR> {<CR>}<Esc>O<Tab>
-inoremap {;<CR> {<CR>};<Esc>O<Tab>
+inoremap {<CR> {<CR>}<Esc>O
+inoremap {;<CR> {<CR>};<Esc>O
