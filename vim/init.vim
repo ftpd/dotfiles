@@ -1,3 +1,18 @@
+call plug#begin('~/.config/vim-plugins')
+Plug 'fatih/molokai'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'rodjek/vim-puppet'
+Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'edkolev/tmuxline.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/limelight.vim'
+Plug 'hashivim/vim-terraform'
+Plug 'bitc/vim-bad-whitespace'
+call plug#end()
+
 set title
 set number
 set gdefault
@@ -18,7 +33,6 @@ set cursorcolumn
 set nojoinspaces
 set nowritebackup
 set termguicolors
-"set relativenumber
 
 set bs=2
 set tabstop=2
@@ -33,7 +47,7 @@ set matchpairs+=(:),{:},[:],<:>,':',":"
 
 nmap <tab> <C-w>w
 nmap <Esc><CR> :wq!<CR>
-nmap <C-p> :Files<CR>
+nmap <C-p> :Files ~<CR>
 nmap <C-j> :term<CR>
 nmap <C-n> :tabnew<CR>
 nmap <C-q> :tabclose<CR>
@@ -48,23 +62,7 @@ map <leader>g  <Esc>:Gstatus<CR>
 map <leader>gc <Esc>:Gcommit<CR>
 map <leader>gp <Esc>:Gpush<CR>
 map <leader>f  <Esc>:Goyo<CR>
-
-filetype plugin indent on
-
-call plug#begin('~/.config/vim-plugins')
-Plug 'fatih/molokai'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'rodjek/vim-puppet'
-Plug 'tpope/vim-fugitive'
-Plug 'edkolev/tmuxline.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'hashivim/vim-terraform'
-Plug 'bitc/vim-bad-whitespace'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-call plug#end()
+map <leader>t  <Esc>:NERDTreeToggle<CR>
 
 syntax on
 colorscheme molokai
@@ -77,10 +75,14 @@ if has("gui")
   set guioptions-=L
   set guifont=Hack\ NF:h14
 endif
+filetype plugin indent on
 
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--height=80%', '--preview', 'bat --color=always --tabs=2 --style=plain --theme="Monokai Extended" {}']}, <bang>0)
+  \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--height=20%', '--preview', 'bat --color=always --tabs=2 --style=plain --theme="Monokai Extended" {}']}, <bang>0)
 
+let g:terraform_fmt_on_save=1
 let g:lightline = {
   \ 'colorscheme': 'powerlineish',
   \ 'active': {
@@ -98,6 +100,3 @@ let g:lightline = {
 function! LightLineReadonly()
   return &readonly && &filetype !=# 'help' ? 'RO' : ''
 endfunction
-
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
