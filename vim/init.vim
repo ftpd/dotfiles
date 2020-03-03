@@ -11,6 +11,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/limelight.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'bitc/vim-bad-whitespace'
+Plug 'frazrepo/vim-rainbow'
 call plug#end()
 
 set title
@@ -82,6 +83,7 @@ autocmd! User GoyoLeave Limelight!
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--height=20%', '--preview', 'bat --color=always --tabs=2 --style=plain --theme="Monokai Extended" {}']}, <bang>0)
 
+let g:rainbow_active = 1
 let g:terraform_fmt_on_save=1
 let g:lightline = {
   \ 'colorscheme': 'powerlineish',
@@ -100,3 +102,11 @@ let g:lightline = {
 function! LightLineReadonly()
   return &readonly && &filetype !=# 'help' ? 'RO' : ''
 endfunction
+
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<Esc>O<Tab>
+inoremap {;<CR> {<CR>};<Esc>O<Tab>
