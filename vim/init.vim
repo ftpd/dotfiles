@@ -13,6 +13,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/limelight.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'bitc/vim-bad-whitespace'
+Plug 'JamshedVesuna/vim-markdown-preview'
 call plug#end()
 
 set title
@@ -86,6 +87,8 @@ command! -bang -nargs=? -complete=dir Files
 
 let g:rainbow_active = 1
 let g:terraform_fmt_on_save=1
+let vim_markdown_preview_github=1
+let vim_markdown_preview_hotkey='<C-m>'
 let g:lightline = {
   \ 'colorscheme': 'powerlineish',
   \ 'active': {
