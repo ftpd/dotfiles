@@ -6,6 +6,7 @@ Plug 'rodjek/vim-puppet'
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'dense-analysis/ale'
+Plug 'jiangmiao/auto-pairs'
 Plug 'frazrepo/vim-rainbow'
 Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
@@ -35,7 +36,6 @@ set cursorline
 set cursorcolumn
 set nojoinspaces
 set nowritebackup
-set termguicolors
 
 set bs=2
 set tabstop=2
@@ -106,11 +106,3 @@ let g:lightline = {
 function! LightLineReadonly()
   return &readonly && &filetype !=# 'help' ? 'RO' : ''
 endfunction
-
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<Esc>O
-inoremap {;<CR> {<CR>};<Esc>O
