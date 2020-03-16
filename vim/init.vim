@@ -71,6 +71,9 @@ syntax on
 colorscheme molokai
 let g:rehash256=1
 set background=dark
+set t_ZH=[3m
+set t_ZR=[23m
+hi Comment cterm=italic gui=italic
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
 if has("gui")
   set guioptions-=e
