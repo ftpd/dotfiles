@@ -10,11 +10,11 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'frazrepo/vim-rainbow'
 Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/limelight.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'bitc/vim-bad-whitespace'
 Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'mhinz/vim-signify'
 call plug#end()
 
 set title
