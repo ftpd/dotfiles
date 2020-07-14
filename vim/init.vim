@@ -79,7 +79,7 @@ if has("gui")
   set guioptions-=e
   set guioptions-=r
   set guioptions-=L
-  set guifont=Hack\ NF:h14
+  set guifont=Hack\ Nerd\ Font\ Mono:h14
 endif
 filetype plugin indent on
 
