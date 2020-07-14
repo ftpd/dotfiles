@@ -1,29 +1,29 @@
-*.pyc
-*.pyo
-__pycache__
-*.a
-*.o
-*.bak
-*.swp
+# self
+.fdignore
+# swap files
 *~
-*.egg-info
-.CFUserTextEncoding
+*.swp
+# config/temp files
+.vim
+.zsh
+.cups
+.local
+.cache
+.config
+.lesshst
+.hushlogin
 .zcompdump*
 .zsh_history
-.CFUserTextEncoding
+.zsh_sessions
+# git
 .git
-.fdignore
-.gitignore
-.DS_Store*
-.hushlogin
-.lesshst
-._sync_*
-.localized
-.cache
-/vim/.netrwhist
-Music
-Movies
+# macOS specified
+.Trash
 Library
-Pictures
-_venv
-.terraform
+.DS_Store*
+.localized
+*.musiclibrary
+*.photoslibrary
+.CFUserTextEncoding
+# misc
+Logs

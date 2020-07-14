@@ -1,12 +1,4 @@
-*.pyc
-*.pyo
-__pycache__
-*.a
-*.o
-*.bak
-*.swp
 *~
-*.egg-info
+*.swp
 .DS_Store
 /vim/.netrwhist
-.terraform
