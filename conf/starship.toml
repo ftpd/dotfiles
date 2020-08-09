@@ -1,0 +1,44 @@
+add_newline = false
+prompt_order = [
+    "username",
+    "hostname",
+#    "kubernetes",
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+#    "docker_context",
+#    "terraform",
+#    "aws",
+    "cmd_duration",
+    "line_break",
+    "battery",
+    "character",
+]
+
+[character]
+use_symbol_for_status = true
+[git_branch]
+symbol = " "
+style = ""
+
+[cmd_duration]
+prefix = ""
+
+[git_status]
+prefix = ""
+suffix = ""
+untracked = " !"
+untracked_count.enabled = true
+modified_count.enabled = true
+deleted_count.enabled = true
+staged = " +"
+staged_count.enabled=true
+show_sync_count = true
+
+[hostname]
+style = ""
+
+[username]
+style_user = ""

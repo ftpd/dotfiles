@@ -9,8 +9,8 @@ alias ll='ls -lh'
 
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='git ls-files --cached --others --exclude-standard 2>/dev/null|fd -H'
@@ -24,4 +24,5 @@ _fzf_compgen_dir() {
   fd -H --type d . "$1"
 }
 
+eval "$(starship init zsh)"
 [ -e ~/.zshrc.local ] && source ~/.zshrc.local

@@ -9,7 +9,6 @@
 .cups
 .local
 .cache
-.config
 .lesshst
 .hushlogin
 .zcompdump*
