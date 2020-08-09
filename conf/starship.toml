@@ -1,7 +1,5 @@
 add_newline = false
 prompt_order = [
-    "username",
-    "hostname",
 #    "kubernetes",
     "directory",
     "git_branch",
@@ -14,6 +12,8 @@ prompt_order = [
     "cmd_duration",
     "line_break",
     "battery",
+    "username",
+    "hostname",
     "character",
 ]
 
