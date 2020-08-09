@@ -44,6 +44,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/plugin
 #git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.zsh/themes/powerlevel10k
 # installing
 ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
-ln -sh ~/.dotfiles/conf/starship.toml ~/.config
+ln -sf ~/.dotfiles/conf/starship.toml ~/.config
 #ln -sf ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 touch ~/.zshrc.local
