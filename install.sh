@@ -43,7 +43,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/plugins/zs
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/plugins/zsh-syntax-highlighting
 #git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.zsh/themes/powerlevel10k
 # installing
-curl -fsSL https://starship.rs/install.sh | bash
 ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
 ln -sh ~/.dotfiles/conf/starship.toml ~/.config
 #ln -sf ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
