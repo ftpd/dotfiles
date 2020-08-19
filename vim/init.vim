@@ -69,6 +69,8 @@ map <leader>t  <Esc>:NERDTreeToggle<CR>
 
 syntax on
 colorscheme molokai
+set t_Co=256
+let g:molokai_original=1
 let g:rehash256=1
 set background=dark
 set t_ZH=[3m
