@@ -1,6 +1,7 @@
 add_newline = false
 prompt_order = [
 #    "kubernetes",
+    "python",
     "directory",
     "git_branch",
     "git_commit",

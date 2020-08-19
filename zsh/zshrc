@@ -7,10 +7,8 @@ zstyle ':completion:*' menu select
 export CLICOLOR=1
 alias ll='ls -lh'
 
-source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
-#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='git ls-files --cached --others --exclude-standard 2>/dev/null|fd -H'
