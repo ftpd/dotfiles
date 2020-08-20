@@ -4,25 +4,26 @@
 *~
 *.swp
 # config/temp files
-.vim
-.zsh
+.fzf*
+.vim*
+.zsh*
 .cups
-.local
 .cache
+.local
+.zcomp*
+.config
+.python*
 .lesshst
 .hushlogin
-.zcompdump*
-.zsh_history
-.zsh_sessions
 # git
-.git
+.git*
 # macOS specified
 .Trash
-Library
 .DS_Store*
 .localized
 *.musiclibrary
 *.photoslibrary
 .CFUserTextEncoding
+Library
 # misc
 Logs
