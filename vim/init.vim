@@ -1,5 +1,5 @@
 call plug#begin('~/.config/vim-plugins')
-Plug 'fatih/molokai'
+Plug 'ashfinal/vim-colors-paper'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'rodjek/vim-puppet'
@@ -68,10 +68,7 @@ map <leader>f  <Esc>:Goyo<CR>
 map <leader>t  <Esc>:NERDTreeToggle<CR>
 
 syntax on
-colorscheme molokai
-set t_Co=256
-let g:molokai_original=1
-let g:rehash256=1
+colorscheme paper
 set background=dark
 set t_ZH=[3m
 set t_ZR=[23m
