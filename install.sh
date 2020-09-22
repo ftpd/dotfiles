@@ -37,11 +37,11 @@ ln -sf ~/.dotfiles/conf/tmux.conf ~/.tmux.conf
 ## zsh
 # cleaning
 rm -rf ~/.zsh ~/.zshrc
-mkdir -p ~/.zsh/plugins
+mkdir -p ~/.zsh/plugins ~/.zsh/themes
 # dependiences
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/plugins/zsh-syntax-highlighting
+git clone https://github.com/romkatv/powerlevel10k.git ~/.zsh/themes/powerlevel10k
 # installing
 ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
-ln -sf ~/.dotfiles/conf/starship.toml ~/.config
 touch ~/.zshrc.local
