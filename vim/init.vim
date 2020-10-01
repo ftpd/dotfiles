@@ -10,9 +10,9 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/limelight.vim'
-Plug 'hashivim/vim-terraform'
 Plug 'bitc/vim-bad-whitespace'
 Plug 'ashfinal/vim-colors-paper'
+"Plug 'hashivim/vim-terraform'
 call plug#end()
 
 set title
