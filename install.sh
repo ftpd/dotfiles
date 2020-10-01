@@ -12,8 +12,7 @@ git clone https://github.com/ftpd/dotfiles.git ~/.dotfiles
 rm -rf ~/.vim*
 # installing
 mkdir -p ~/.config
-ln -sf ~/.dotfiles/vim ~/.vim
-ln -sf ~/.dotfiles/vim/init.vim ~/.vimrc
+ln -sf ~/.dotfiles/vim ~/.config/nvim
 
 ## .gitignore
 # cleaning
