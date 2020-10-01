@@ -1,6 +1,8 @@
 autoload -U compinit && compinit
 autoload -U promptinit && promptinit
 
+bindkey -e
+
 setopt correct_all
 zstyle ':completion:*' menu select
 
