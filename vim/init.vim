@@ -43,8 +43,8 @@ set matchpairs+=(:),{:},[:],<:>,':',":"
 
 nmap <tab> <C-w>w
 nmap <Esc><CR> :wq!<CR>
-nmap <C-p> :Files ~<CR>
-nmap <C-j> :term<CR>
+nmap <C-p> :Files<CR>
+nmap <C-a> :Files ~<CR>
 nmap <C-n> :tabnew<CR>
 nmap <C-q> :tabclose<CR>
 nmap <C-Left> :tabprev<CR>
