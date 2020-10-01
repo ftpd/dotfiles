@@ -58,6 +58,7 @@ map <leader>f  <Esc>:Goyo<CR>
 map <leader>t  <Esc>:NERDTreeToggle<CR>
 
 colorscheme paper
+set bg=dark
 set t_ZH=[3m
 set t_ZR=[23m
 hi Comment cterm=italic gui=italic
@@ -66,7 +67,7 @@ hi BadWhitespace ctermbg=lightblue guibg=lightblue
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--info=inline', '--preview', 'bat --color=always --tabs=2 --style=plain --theme="Monokai Extended" {}']}, <bang>0)
+  \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--preview', 'bat --color=always --tabs=2 --style=plain --theme="Monokai Extended" {}']}, <bang>0)
 
 let g:rainbow_active = 1
 let g:terraform_fmt_on_save=1
