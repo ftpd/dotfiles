@@ -10,15 +10,15 @@ export CLICOLOR=1
 alias ll='ls -lh'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='fd -H -c never'
-export FZF_CTRL_T_COMMAND='fd -H -c never'
+export FZF_DEFAULT_COMMAND='fd -H'
+export FZF_CTRL_T_COMMAND='fd -H'
 export FZF_DEFAULT_OPTS="-e --multi --layout=reverse --preview='bat --color=always --tabs=2 --style=plain --theme=Monokai\ Extended {}'"
 export FZF_CTRL_R_OPTS="-e --layout=reverse"
 _fzf_compgen_path() {
-  fd -H -c never. "$1"
+  fd -H . "$1"
 }
 _fzf_compgen_dir() {
-  fd -H -c never--type d . "$1"
+  fd -H --type d . "$1"
 }
 
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
