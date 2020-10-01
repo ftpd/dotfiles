@@ -47,6 +47,8 @@ nmap <C-p> :Files<CR>
 nmap <C-a> :Files ~<CR>
 nmap <C-n> :tabnew<CR>
 nmap <C-q> :tabclose<CR>
+nmap <C-k> :tabprevious<CR>
+nmap <C-l> :tabnext<CR>
 nmap <C-Left> :tabprev<CR>
 nmap <C-Right> :tabnext<CR>
 
