@@ -3,9 +3,6 @@ autoload -U promptinit && promptinit
 
 bindkey -e
 
-setopt correct_all
-zstyle ':completion:*' menu select
-
 export CLICOLOR=1
 alias ll='ls -lh'
 
