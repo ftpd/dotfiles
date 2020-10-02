@@ -10,7 +10,7 @@ alias ll='ls -lh'
 export FZF_DEFAULT_COMMAND='fd -H'
 export FZF_CTRL_T_COMMAND='fd -H'
 export FZF_DEFAULT_OPTS="-e --multi --layout=reverse --preview='bat --color=always --tabs=2 --style=plain --theme=Monokai\ Extended {}'"
-export FZF_CTRL_R_OPTS="-e --layout=reverse --previev=''"
+export FZF_CTRL_R_OPTS="-e --layout=reverse --preview=''"
 _fzf_compgen_path() {
   fd -H . "$1"
 }
