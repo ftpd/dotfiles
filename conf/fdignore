@@ -5,7 +5,6 @@
 *.swp
 # config/temp files
 .fzf*
-.vim*
 .zsh*
 .cups
 .cache
@@ -14,6 +13,7 @@
 .config
 .python*
 .lesshst
+.history
 .hushlogin
 # git
 .git*
