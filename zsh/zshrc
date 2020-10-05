@@ -1,5 +1,5 @@
 bindkey -e
-autoload -U compinit && compinit -d ~/.zsh/caches/zcompdump
+autoload -U compinit && compinit -d ~/.config/zsh/caches/zcompdump
 autoload -U promptinit && promptinit
 
 export HISTSIZE=10000
