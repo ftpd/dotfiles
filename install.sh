@@ -4,14 +4,14 @@
 rm -rf ~/.bash* ~/.profile
 rm -rf ~/.dotfiles
 
-# repo
+# repo + preparations
 git clone https://github.com/ftpd/dotfiles.git ~/.dotfiles
+mkdir -p ~/.config
 
 ## vim
 # cleaning
-rm -rf ~/.vim*
+rm -rf ~/.vim* ~/.config/nvim
 # installing
-mkdir -p ~/.config
 ln -sf ~/.dotfiles/vim ~/.config/nvim
 
 ## .gitignore
@@ -35,12 +35,12 @@ ln -sf ~/.dotfiles/conf/tmux.conf ~/.tmux.conf
 
 ## zsh
 # cleaning
-rm -rf ~/.zsh ~/.zshrc
-mkdir -p ~/.zsh/plugins ~/.zsh/themes
+rm -rf ~/.zsh* ~/.config/zsh*
+mkdir -p ~/.config/zsh/caches ~/.config/zsh/plugins ~/.config/zsh/themes
 # dependiences
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/plugins/zsh-syntax-highlighting
-git clone https://github.com/romkatv/powerlevel10k.git ~/.zsh/themes/powerlevel10k
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/plugins/zsh-syntax-highlighting
+git clone https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/themes/powerlevel10k
 # installing
 ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
 touch ~/.zshrc.local

@@ -1,10 +1,12 @@
-autoload -U compinit && compinit
+bindkey -e
+autoload -U compinit && compinit -d ~/.zsh/caches/zcompdump
 autoload -U promptinit && promptinit
 
-bindkey -e
-
-export CLICOLOR=1
-alias ll='ls -lh'
+export HISTSIZE=10000
+SAVEHIST=$HISTSIZE
+HISTFILE=~/.history
+setopt inc_append_history
+setopt share_history
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd -H'
@@ -18,9 +20,9 @@ _fzf_compgen_dir() {
   fd -H --type d . "$1"
 }
 
-source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.dotfiles/zsh/p10k.zsh
 
 [ -e ~/.zshrc.local ] && source ~/.zshrc.local
