@@ -61,6 +61,7 @@ map <leader>t  <Esc>:NERDTreeToggle<CR>
 
 colorscheme ayu
 set bg=dark
+set termguicolors
 set t_ZH=[3m
 set t_ZR=[23m
 hi Comment cterm=italic gui=italic
