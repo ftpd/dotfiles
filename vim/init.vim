@@ -1,4 +1,5 @@
 call plug#begin('~/.config/vim-plugins')
+Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
@@ -11,8 +12,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/limelight.vim'
 Plug 'bitc/vim-bad-whitespace'
-Plug 'ashfinal/vim-colors-paper'
-"Plug 'hashivim/vim-terraform'
+"Plug 'ashfinal/vim-colors-paper'
 call plug#end()
 
 set title
@@ -59,7 +59,7 @@ map <leader>p  <Esc>:set paste!<CR>
 map <leader>f  <Esc>:Goyo<CR>
 map <leader>t  <Esc>:NERDTreeToggle<CR>
 
-colorscheme paper
+colorscheme ayu
 set bg=dark
 set t_ZH=[3m
 set t_ZR=[23m
