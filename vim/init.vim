@@ -68,7 +68,9 @@ hi BadWhitespace ctermbg=lightblue guibg=lightblue
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--preview', 'bat --color=always --tabs=2 --style=plain --theme="Monokai Extended" {}']}, <bang>0)
+  \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--preview', 'bat --color always --style=plain --theme="Monokai Extended" {}']}, <bang>0)
+command! -bang -nargs=? -complete=dir Colors
+  \ call fzf#vim#colors({'options': ['-e', '--layout=reverse', '--preview', '']}, <bang>0)
 
 let g:rainbow_active = 1
 let g:terraform_fmt_on_save=1
