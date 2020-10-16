@@ -1,5 +1,6 @@
 call plug#begin('~/.config/vim-plugins')
 Plug 'ashfinal/vim-colors-paper'
+Plug 'arcticicestudio/nord-vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
@@ -59,7 +60,7 @@ map <leader>f  <Esc>:Goyo<CR>
 map <leader>t  <Esc>:NERDTreeToggle<CR>
 
 set bg=dark
-colorscheme paper
+colorscheme nord
 set t_ZH=[3m
 set t_ZR=[23m
 hi Comment cterm=italic gui=italic
@@ -68,14 +69,14 @@ hi BadWhitespace ctermbg=lightblue guibg=lightblue
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--preview', 'bat --color always --style=plain --theme="Monokai Extended" {}']}, <bang>0)
+  \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--preview', 'bat --color always --style=plain --theme="Nord" {}']}, <bang>0)
 command! -bang -nargs=? -complete=dir Colors
   \ call fzf#vim#colors({'options': ['-e', '--layout=reverse', '--preview', '']}, <bang>0)
 
 let g:rainbow_active = 1
 let g:terraform_fmt_on_save=1
 let g:lightline = {
-  \ 'colorscheme': 'powerlineish',
+  \ 'colorscheme': 'nord',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'readonly', 'filename' ] ],
