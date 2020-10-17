@@ -14,7 +14,7 @@ rm -rf ~/.vim* ~/.config/vim
 mkdir -p ~/.config/vim
 # installing
 ln -sf ~/.dotfiles/vim/autoload ~/.config/vim/
-ln -sf ~/.doftiles/vim/vimrc ~/.vimrc
+ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
 
 ## .gitignore
 # cleaning
