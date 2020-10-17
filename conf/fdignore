@@ -4,6 +4,7 @@
 *~
 *.swp
 # config/temp files
+.vim
 .fzf*
 .cups
 .cache
@@ -25,9 +26,11 @@
 .CFUserTextEncoding
 Music
 Movies
+iCloud
 Library
 Desktop
 Pictures
+Downloads
 Documents
 # misc
 Bin
