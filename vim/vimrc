@@ -3,8 +3,6 @@ set runtimepath+=~/.config/vim/runtime
 call plug#begin('~/.config/vim/plugins')
 "Plug 'ashfinal/vim-colors-paper'
 Plug 'arcticicestudio/nord-vim'
-Plug 'NieTiger/halcyon-neovim'
-Plug 'koron/minimap-vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
