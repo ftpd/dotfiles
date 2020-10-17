@@ -1,4 +1,4 @@
-set runtimepath=~/.config/vim/runtime
+set runtimepath+=~/.config/vim/runtime
 
 call plug#begin('~/.config/vim/plugins')
 "Plug 'ashfinal/vim-colors-paper'
@@ -68,6 +68,7 @@ map <leader>n  <Esc>:set nonumber!<CR>
 map <leader>p  <Esc>:set paste!<CR>
 map <leader>f  <Esc>:Goyo<CR>
 
+syntax on
 set bg=dark
 set t_ZH=[3m
 set t_ZR=[23m
