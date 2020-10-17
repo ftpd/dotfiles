@@ -21,10 +21,10 @@
 .Trash
 .DS_Store*
 .localized
-*.musiclibrary
-*.photoslibrary
 .chpwd-recent-dirs
 .CFUserTextEncoding
+Music
+Photos
 Library
 # misc
 Logs
