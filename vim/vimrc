@@ -2,6 +2,7 @@ set runtimepath+=~/.config/vim/runtime
 
 call plug#begin('~/.config/vim/plugins')
 Plug 'ashfinal/vim-colors-paper'
+Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
@@ -77,19 +78,19 @@ if has("gui")
    set guioptions-=L
    set guifont=Hack\ Nerd\ Font\ Mono:h14
  endif
-colorscheme paper
+colorscheme gruvbox
 
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--preview', 'bat --color=always --style=plain --theme="Monokai Extended" {}']}, <bang>0)
+  \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--preview', 'bat --color=always --style=plain --theme=gruvbox {}']}, <bang>0)
 command! -bang -nargs=? -complete=dir Colors
   \ call fzf#vim#colors({'options': ['-e', '--layout=reverse', '--preview', '']}, <bang>0)
 
 let g:rainbow_active = 1
 let g:terraform_fmt_on_save=1
 let g:lightline = {
-  \ 'colorscheme': 'powerlineish',
+  \ 'colorscheme': 'gruvbox',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'readonly', 'filename' ] ],
