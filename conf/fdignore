@@ -23,6 +23,7 @@
 .localized
 *.musiclibrary
 *.photoslibrary
+.chpwd-recent-dirs
 .CFUserTextEncoding
 Library
 # misc
