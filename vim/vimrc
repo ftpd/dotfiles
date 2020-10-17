@@ -1,6 +1,10 @@
-call plug#begin('~/.config/vim-plugins')
-Plug 'ashfinal/vim-colors-paper'
+set runtimepath=~/.config/vim
+
+call plug#begin('~/.config/vim/plugins')
+"Plug 'ashfinal/vim-colors-paper'
 Plug 'arcticicestudio/nord-vim'
+Plug 'NieTiger/halcyon-neovim'
+Plug 'koron/minimap-vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
@@ -18,7 +22,9 @@ call plug#end()
 set title
 set number
 set gdefault
+set wildmenu
 set nobackup
+set incsearch
 set expandtab
 set smartcase
 set splitbelow
@@ -26,6 +32,7 @@ set splitright
 set ignorecase
 set nohlsearch
 set noshowmode
+set autoindent
 set shiftround
 set cursorline
 set cursorcolumn
@@ -35,11 +42,14 @@ set nowritebackup
 set bs=2
 set tabstop=2
 set scrolloff=5
+set laststatus=2
 set shiftwidth=2
 set showtabline=2
 set softtabstop=2
 set winminheight=0
+set backspace=eol,start,indent
 set matchpairs+=(:),{:},[:],<:>,':',":"
+set viminfofile="$HOME/.config/vim/viminfo"
 
 nmap <tab> <C-w>w
 nmap <Esc><CR> :wq!<CR>
@@ -57,19 +67,24 @@ map <leader>nb <Esc>:set cc=0<CR>
 map <leader>n  <Esc>:set nonumber!<CR>
 map <leader>p  <Esc>:set paste!<CR>
 map <leader>f  <Esc>:Goyo<CR>
-map <leader>t  <Esc>:NERDTreeToggle<CR>
 
 set bg=dark
-colorscheme nord
 set t_ZH=[3m
 set t_ZR=[23m
 hi Comment cterm=italic gui=italic
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
+if has("gui")
+   set guioptions-=e
+   set guioptions-=r
+   set guioptions-=L
+   set guifont=Hack\ Nerd\ Font\ Mono:h14
+ endif
+colorscheme nord
 
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--preview', 'bat --color always --style=plain --theme="Nord" {}']}, <bang>0)
+  \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--preview', 'bat --color=always --style=plain --theme="Nord" {}']}, <bang>0)
 command! -bang -nargs=? -complete=dir Colors
   \ call fzf#vim#colors({'options': ['-e', '--layout=reverse', '--preview', '']}, <bang>0)
 

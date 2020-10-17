@@ -10,9 +10,11 @@ mkdir -p ~/.config
 
 ## vim
 # cleaning
-rm -rf ~/.vim* ~/.config/nvim
+rm -rf ~/.vim* ~/.config/vim
+mkdir -p ~/.convig/vim
 # installing
-ln -sf ~/.dotfiles/vim ~/.config/nvim
+ln -sf ~/.dotfiles/vim/autoload ~/.config/vim/
+ln -sf ~/.doftiles/vim/vimrc ~/.vimrc
 
 ## .gitignore
 # cleaning
