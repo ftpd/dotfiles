@@ -49,7 +49,7 @@ set softtabstop=2
 set winminheight=0
 set backspace=eol,start,indent
 set matchpairs+=(:),{:},[:],<:>,':',":"
-set viminfofile="$HOME/.config/vim/viminfo"
+set viminfofile=~/.config/vim/viminfo
 
 nmap <tab> <C-w>w
 nmap <Esc><CR> :wq!<CR>
