@@ -11,7 +11,7 @@ mkdir -p ~/.config
 ## vim
 # cleaning
 rm -rf ~/.vim* ~/.config/vim
-mkdir -p ~/.convig/vim
+mkdir -p ~/.config/vim
 # installing
 ln -sf ~/.dotfiles/vim/autoload ~/.config/vim/
 ln -sf ~/.doftiles/vim/vimrc ~/.vimrc
