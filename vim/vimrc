@@ -71,11 +71,12 @@ set t_ZR=[23m
 hi Comment cterm=italic gui=italic
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
 if has("gui")
-   set guioptions-=e
-   set guioptions-=r
-   set guioptions-=L
-   set guifont=Hack\ Nerd\ Font\ Mono:h14
-   let $FZF_DEFAULT_COMMAND='fd -H -L --ignore-file ~/.config/local.fdignore'
+  set guioptions-=e
+  set guioptions-=r
+  set guioptions-=L
+  set guifont=Hack\ Nerd\ Font\ Mono:h14
+  set linespace=1
+  let $FZF_DEFAULT_COMMAND='fd -H -L --ignore-file ~/.config/local.fdignore'
  endif
 
 set bg=dark
