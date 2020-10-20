@@ -9,15 +9,15 @@ setopt inc_append_history
 setopt share_history
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='fd -H -L --ignore-file ~/.config/fdignore.local'
-export FZF_CTRL_T_COMMAND='fd -H -L --ignore-file ~/.config/fdignore.local'
+export FZF_DEFAULT_COMMAND='fd -H -L --ignore-file ~/.config/local.fdignore'
+export FZF_CTRL_T_COMMAND='fd -H -L --ignore-file ~/.config/local.fdignore'
 export FZF_DEFAULT_OPTS="-e --multi --layout=reverse --preview='bat --color=always --tabs=2 --style=plain --theme=gruvbox {}'"
 export FZF_CTRL_R_OPTS="-e --layout=reverse --preview=''"
 _fzf_compgen_path() {
-  fd -H -L --ignore-file ~/.config/fdignore.local . "$1"
+  fd -H -L --ignore-file ~/.config/local.fdignore . "$1"
 }
 _fzf_compgen_dir() {
-  fd -H -L --ignore-file ~/.config/fdignore.local --type d . "$1"
+  fd -H -L --ignore-file ~/.config/local.fdignore --type d . "$1"
 }
 
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -25,4 +25,4 @@ source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.dotfiles/zsh/p10k.zsh
 
-[ -e ~/.config/zsh/local.zsh ] && source ~/.config/zsh/local.zsh
+[ -e ~/.config/local.zsh ] && source ~/.config/local.zsh

@@ -37,7 +37,7 @@ ln -sf ~/.dotfiles/conf/tmux.conf ~/.tmux.conf
 
 ## zsh
 # cleaning
-rm -rf ~/.zsh* ~/.zcompdump* ~/.config/zsh/
+rm -rf ~/.zsh* ~/.zcomp* ~/.config/zsh/
 mkdir -p ~/.config/zsh/caches ~/.config/zsh/plugins ~/.config/zsh/themes
 # dependiences
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/plugins/zsh-autosuggestions
