@@ -1,6 +1,6 @@
 *.swp
 *~
-.*history
+.*history*
 .cache
 .config/vim
 .config/zsh/caches
@@ -12,5 +12,6 @@
 .lesshst
 .local
 .python*
+.ssh/known_hosts
 .vim
 .zcomp*
