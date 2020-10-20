@@ -9,15 +9,15 @@ setopt inc_append_history
 setopt share_history
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='fd -H'
-export FZF_CTRL_T_COMMAND='fd -H'
+export FZF_DEFAULT_COMMAND='fd -H -L --ignore-file ~/.config/fdignore.local'
+export FZF_CTRL_T_COMMAND='fd -H -L --ignore-file ~/.config/fdignore.local'
 export FZF_DEFAULT_OPTS="-e --multi --layout=reverse --preview='bat --color=always --tabs=2 --style=plain --theme=gruvbox {}'"
 export FZF_CTRL_R_OPTS="-e --layout=reverse --preview=''"
 _fzf_compgen_path() {
-  fd -H . "$1"
+  fd -H -L --ignore-file ~/.config/fdignore.local . "$1"
 }
 _fzf_compgen_dir() {
-  fd -H --type d . "$1"
+  fd -H -L --ignore-file ~/.config/fdignore.local --type d . "$1"
 }
 
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

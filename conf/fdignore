@@ -1,37 +1,16 @@
-# self
-.fdignore
-# swap files
-*~
 *.swp
-# config/temp files
-.vim
-.fzf*
-.cups
+*~
+.*history
 .cache
-.local
-.zcomp*
-.config
-.python*
-.lesshst
-.history
-.hushlogin
-.zcompdump
-# git
+.config/vim
+.config/zsh/caches
+.config/zsh/plugins
+.config/zsh/themes
+.fdignore
+.fzf*
 .git*
-# macOS specified
-.Trash
-.DS_Store*
-.localized
-.chpwd-recent-dirs
-.CFUserTextEncoding
-Music
-Movies
-iCloud
-Library
-Desktop
-Pictures
-Downloads
-Documents
-# misc
-Bin
-Logs
+.lesshst
+.local
+.python*
+.vim
+.zcomp*
