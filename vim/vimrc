@@ -79,7 +79,6 @@ if has("gui")
  endif
 
 set bg=dark
-set termguicolors
 let g:gruvbox_italic=1
 colorscheme gruvbox
 
@@ -102,7 +101,6 @@ let g:lightline = {
   \              [ 'filetype' ] ]
   \ },
   \ 'component_function': {
-  \   'fugitive': 'FugitiveHead',
   \   'readonly': 'LightLineReadonly'},
   \ }
 
