@@ -67,7 +67,6 @@ map <leader>p  <Esc>:set paste!<CR>
 map <leader>f  <Esc>:Goyo<CR>
 
 syntax on
-set bg=dark
 set t_ZH=[3m
 set t_ZR=[23m
 hi Comment cterm=italic gui=italic
@@ -78,6 +77,10 @@ if has("gui")
    set guioptions-=L
    set guifont=Hack\ Nerd\ Font\ Mono:h14
  endif
+
+set bg=dark
+set termguicolors
+let g:gruvbox_italic=1
 colorscheme gruvbox
 
 autocmd! User GoyoEnter Limelight
