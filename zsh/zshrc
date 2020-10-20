@@ -2,6 +2,7 @@ bindkey -e
 autoload -U compinit && compinit -d ~/.config/zsh/caches/zcompdump
 autoload -U promptinit && promptinit
 zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors ''
 zmodload zsh/complist
 
 export HISTSIZE=10000
