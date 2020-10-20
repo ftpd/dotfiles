@@ -1,7 +1,6 @@
 set runtimepath+=~/.config/vim/runtime
 
 call plug#begin('~/.config/vim/plugins')
-Plug 'ashfinal/vim-colors-paper'
 Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
