@@ -25,4 +25,4 @@ source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.dotfiles/zsh/p10k.zsh
 
-[ -e ~/.zshrc.local ] && source ~/.zshrc.local
+[ -e ~/.config/zsh/local.zsh ] && source ~/.config/zsh/local.zsh

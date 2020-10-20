@@ -37,7 +37,7 @@ ln -sf ~/.dotfiles/conf/tmux.conf ~/.tmux.conf
 
 ## zsh
 # cleaning
-rm -rf ~/.zsh ~/.zshrc ~/.zsh_history ~/.zsh_sessions ~/.zcompdump* ~/.config/zsh*
+rm -rf ~/.zsh* ~/.zcompdump* ~/.config/zsh/
 mkdir -p ~/.config/zsh/caches ~/.config/zsh/plugins ~/.config/zsh/themes
 # dependiences
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/plugins/zsh-autosuggestions
@@ -45,4 +45,3 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh
 git clone https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/themes/powerlevel10k
 # installing
 ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
-touch ~/.zshrc.local
