@@ -67,14 +67,6 @@ set t_ZH=[3m
 set t_ZR=[23m
 hi Comment cterm=italic gui=italic
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
-if has("gui")
-  set guioptions-=e
-  set guioptions-=r
-  set guioptions-=L
-  set guifont=Hack\ Nerd\ Font\ Mono:h14
-  set linespace=1
-  let $FZF_DEFAULT_COMMAND='fd -H -L --ignore-file ~/.config/local.fdignore'
- endif
 
 set bg=dark
 let g:gruvbox_italic=1
@@ -82,6 +74,7 @@ colorscheme gruvbox
 
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+let $FZF_DEFAULT_COMMAND='fd -H -L --ignore-file ~/.config/local.fdignore'
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--preview', 'bat --color=always --style=plain --theme=gruvbox {}']}, <bang>0)
 command! -bang -nargs=? -complete=dir Colors
