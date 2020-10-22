@@ -1,47 +1,32 @@
 #!/bin/sh
 
-# cleaning & preparing
+# cleaning
 rm -rf ~/.bash* ~/.profile
 rm -rf ~/.dotfiles
+rm -rf ~/.config/fd ~/.config/git ~/.config/nvim ~/.config/tmux ~/.config/zsh ~/.zshrc
+rm -rf ~/.fdignore ~/.fzf.bash ~/.fzf.zsh ~/.gitconfig ~/.gitignore ~/.history ~/.tmux.conf ~/.zcomp* ~/.zsh*
 
 # repo + preparations
 git clone https://github.com/ftpd/dotfiles.git ~/.dotfiles
-mkdir -p ~/.config
+mkdir -p ~/.cache ~/.config/local ~/.config/nvim ~/.config/zsh
 
-## vim
-# cleaning
-rm -rf ~/.vim* ~/.config/vim
-mkdir -p ~/.config/vim/runtime
-# installing
-ln -sf ~/.dotfiles/vim/autoload ~/.config/vim/runtime
-ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
+## neovim
+mkdir -p ~/.config/nvim/runtime
+ln -sf ~/.dotfiles/nvim/autoload ~/.config/nvim/runtime
+ln -sf ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 
 ## .gitignore
-# cleaning
-rm -rf ~/.gitignore
-# installing
-ln -sf ~/.dotfiles/conf/gitignore ~/.gitignore
-git config --global core.excludesfile ~/.gitignore
+ln -sf ~/.dotfiles/git ~/.config/
 
-## .fdignore
-# cleaning
-rm -rf ~/.fdignore
-# installing
-ln -sf ~/.dotfiles/conf/fdignore ~/.fdignore
+## fdignore
+ln -sf ~/.dotfiles/fd ~/.config/
 
 ## tmux
-# cleaning
-rm -rf ~/.tmux.conf
-# installing
-ln -sf ~/.dotfiles/conf/tmux.conf ~/.tmux.conf
+ln -sf ~/.dotfiles/tmux ~/.config/
 
 ## zsh
-# cleaning
-rm -rf ~/.zsh* ~/.zcomp* ~/.config/zsh/
-mkdir -p ~/.config/zsh/caches ~/.config/zsh/plugins ~/.config/zsh/themes
-# dependiences
+mkdir -p ~/.cache/zsh ~/.config/zsh/caches ~/.config/zsh/plugins ~/.config/zsh/themes
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/plugins/zsh-syntax-highlighting
 git clone https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/themes/powerlevel10k
-# installing
 ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc

@@ -1,31 +1,34 @@
+export XDG_CONFIG_HOME=~/.config
+export XDG_DATA_HOME=~/.cache
+
 bindkey -e
-autoload -U compinit && compinit -d ~/.config/zsh/caches/zcompdump
 autoload -U promptinit && promptinit
+autoload -U compinit && compinit -d $XDG_DATA_HOME/zsh/zcompdump
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ''
 zmodload zsh/complist
 
 export HISTSIZE=10000
 SAVEHIST=$HISTSIZE
-HISTFILE=~/.history
+HISTFILE=$XDG_DATA_HOME/zsh/history
 setopt inc_append_history
 setopt share_history
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='fd -H -L --ignore-file ~/.config/local.fdignore'
-export FZF_CTRL_T_COMMAND='fd -H -L --ignore-file ~/.config/local.fdignore'
+[ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ] && source $XDG_CONFIG_HOME/fzf/fzf.zsh
+export FZF_DEFAULT_COMMAND='fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd'
+export FZF_CTRL_T_COMMAND='fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd'
 export FZF_DEFAULT_OPTS="-e --multi --layout=reverse --preview='bat --color=always --tabs=2 --style=plain --theme=gruvbox {}'"
 export FZF_CTRL_R_OPTS="-e --layout=reverse --preview=''"
 _fzf_compgen_path() {
-  fd -H -L --ignore-file ~/.config/local.fdignore . "$1"
+  fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd . "$1"
 }
 _fzf_compgen_dir() {
-  fd -H -L --ignore-file ~/.config/local.fdignore --type d . "$1"
+  fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd --type d . "$1"
 }
 
-source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.config/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
+source $XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $XDG_CONFIG_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $XDG_CONFIG_HOME/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.dotfiles/zsh/p10k.zsh
 
-[ -e ~/.config/local.zsh ] && source ~/.config/local.zsh
+[ -e $XDG_CONFIG_HOME/local/zsh ] && source $XDG_CONFIG_HOME/local/zsh

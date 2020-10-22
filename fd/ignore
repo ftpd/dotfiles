@@ -1,0 +1,16 @@
+*.swp
+*~
+.*history*
+.cache
+.config/nvim/runtime
+.config/nvim/plugins
+.config/zsh
+nvim/runtime
+nvim/plugins
+zsh
+.git*
+.lesshst
+.python*
+.ssh/known_hosts
+.vim
+.zcomp*
