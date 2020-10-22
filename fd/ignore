@@ -4,9 +4,9 @@
 .cache
 .config/nvim/autoload
 .config/zsh
-nvim/runtime
-nvim/plugins
-zsh
+nvim/autoload
+zsh/plugins
+zsh/themes
 .git*
 .lesshst
 .python*
