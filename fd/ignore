@@ -2,8 +2,7 @@
 *~
 .*history*
 .cache
-.config/nvim/runtime
-.config/nvim/plugins
+.config/nvim/autload
 .config/zsh
 nvim/runtime
 nvim/plugins
