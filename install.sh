@@ -8,12 +8,13 @@ rm -rf ~/.fdignore ~/.fzf.bash ~/.fzf.zsh ~/.gitconfig ~/.gitignore ~/.history ~
 
 # repo + preparations
 git clone https://github.com/ftpd/dotfiles.git ~/.dotfiles
-mkdir -p ~/.cache ~/.config/local ~/.config/zsh
+mkdir -p ~/.cache ~/.config/git ~/.config/local ~/.config/zsh
 
 ## neovim
 ln -sf ~/.dotfiles/nvim ~/.config/
+
 ## .gitignore
-ln -sf ~/.dotfiles/git ~/.config/
+ln -sf ~/.dotfiles/git/ignore ~/.config/git/ignore
 
 ## fdignore
 ln -sf ~/.dotfiles/fd ~/.config/
