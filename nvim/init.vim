@@ -1,6 +1,4 @@
-set runtimepath+=~/.config/vim/runtime
-
-call plug#begin('~/.config/vim/plugins')
+call plug#begin('~/.cache/vim-plugins')
 Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -46,7 +44,6 @@ set softtabstop=2
 set winminheight=0
 set backspace=eol,start,indent
 set matchpairs+=(:),{:},[:],<:>,':',":"
-set viminfofile=~/.config/vim/viminfo
 
 nmap <tab> <C-w>w
 nmap <Esc><CR> :wq!<CR>
