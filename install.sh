@@ -24,8 +24,9 @@ ln -sf ~/.dotfiles/tmux ~/.config/
 
 ## zsh
 echo "skip_global_compinit=1" > ~/.zshenv
+echo "export ZDOTDIR=~/.config/zsh" >> ~/.zshenv
 mkdir -p ~/.cache/zsh ~/.config/zsh/plugins ~/.config/zsh/themes
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/plugins/zsh-syntax-highlighting
 git clone https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/themes/powerlevel10k
-ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
+ln -sf ~/.dotfiles/zsh/zshrc ~/.config/zsh/.zshrc
