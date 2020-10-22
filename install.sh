@@ -3,7 +3,7 @@
 # cleaning
 rm -rf ~/.bash* ~/.profile
 rm -rf ~/.dotfiles
-rm -rf ~/.config/fd ~/.config/git ~/.config/nvim ~/.config/tmux ~/.config/vim ~/.config/zsh
+rm -rf ~/.config/fd ~/.config/git ~/.config/nvim ~/.config/tmux ~/.config/vim ~/.config/zsh ~/.local
 rm -rf ~/.fdignore ~/.fzf.bash ~/.fzf.zsh ~/.gitconfig ~/.gitignore ~/.history ~/.tmux.conf ~/.vim* ~/.zcomp* ~/.zsh*
 
 # repo + preparations
