@@ -1,6 +1,3 @@
-export XDG_CONFIG_HOME=~/.config
-export XDG_DATA_HOME=~/.cache
-
 bindkey -e
 autoload -U promptinit && promptinit
 autoload -U compinit && compinit -d $XDG_DATA_HOME/zsh/zcompdump
