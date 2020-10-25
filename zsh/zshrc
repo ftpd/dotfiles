@@ -1,9 +1,6 @@
 bindkey -e
 autoload -U promptinit && promptinit
 autoload -U compinit && compinit -d $XDG_DATA_HOME/zsh/zcompdump
-zstyle ':completion:*' menu select
-zstyle ':completion:*' list-colors ''
-zmodload zsh/complist
 
 export HISTSIZE=10000
 SAVEHIST=$HISTSIZE
@@ -14,23 +11,29 @@ setopt share_history
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-source $XDG_CONFIG_HOME//zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
-zstyle ":completion:*:git-checkout:*" sort false
-zstyle ':completion:*:descriptions' format '[%d]'
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
-
-[ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ] && source $XDG_CONFIG_HOME/fzf/fzf.zsh
-export FZF_DEFAULT_COMMAND='fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd'
-export FZF_CTRL_T_COMMAND='fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd'
-export FZF_DEFAULT_OPTS="-e --multi --layout=reverse --preview='bat --color=always --tabs=2 --style=plain --theme=gruvbox {}'"
-export FZF_CTRL_R_OPTS="-e --layout=reverse --preview=''"
-_fzf_compgen_path() {
-  fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd . "$1"
-}
-_fzf_compgen_dir() {
-  fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd --type d . "$1"
-}
+if [ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ]; then
+  source $XDG_CONFIG_HOME/fzf/fzf.zsh
+  source $XDG_CONFIG_HOME//zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
+  zstyle ":completion:*:git-checkout:*" sort false
+  zstyle ':completion:*:descriptions' format '[%d]'
+  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+  zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+  export FZF_TMUX_HEIGHT=60%
+  export FZF_DEFAULT_COMMAND='fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd'
+  export FZF_CTRL_T_COMMAND='fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd'
+  export FZF_DEFAULT_OPTS="-e --multi --layout=reverse --preview='bat --color=always --tabs=2 --style=plain --theme=gruvbox {}'"
+  export FZF_CTRL_R_OPTS="-e --layout=reverse --preview=''"
+  _fzf_compgen_path() {
+    fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd . "$1"
+  }
+  _fzf_compgen_dir() {
+    fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd --type d . "$1"
+  }
+else
+  zstyle ':completion:*' menu select
+  zstyle ':completion:*' list-colors ''
+  zmodload zsh/complist
+fi
 
 source $XDG_CONFIG_HOME/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.dotfiles/zsh/p10k.zsh
