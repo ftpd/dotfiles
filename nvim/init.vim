@@ -67,7 +67,7 @@ colorscheme gruvbox
 
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
-let $FZF_DEFAULT_COMMAND='fd -H -L --ignore-file ~/.config/local.fdignore'
+let $FZF_DEFAULT_COMMAND='fd -H -L --ignore-file ~/.config/local/fd'
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--preview', 'bat --color=always --style=plain --theme=gruvbox {}']}, <bang>0)
 command! -bang -nargs=? -complete=dir Colors
