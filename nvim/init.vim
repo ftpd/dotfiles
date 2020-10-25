@@ -17,9 +17,7 @@ call plug#end()
 set title
 set number
 set gdefault
-set wildmenu
 set nobackup
-set incsearch
 set expandtab
 set smartcase
 set splitbelow
@@ -27,22 +25,19 @@ set splitright
 set ignorecase
 set nohlsearch
 set noshowmode
-set autoindent
 set shiftround
 set cursorline
-set cursorcolumn
 set nojoinspaces
+set cursorcolumn
 set nowritebackup
 
 set bs=2
 set tabstop=2
 set scrolloff=5
-set laststatus=2
 set shiftwidth=2
 set showtabline=2
 set softtabstop=2
 set winminheight=0
-set backspace=eol,start,indent
 set matchpairs+=(:),{:},[:],<:>,':',":"
 
 nmap <tab> <C-w>w
@@ -62,13 +57,11 @@ map <leader>n  <Esc>:set nonumber!<CR>
 map <leader>p  <Esc>:set paste!<CR>
 map <leader>f  <Esc>:Goyo<CR>
 
-syntax on
 set t_ZH=[3m
 set t_ZR=[23m
 hi Comment cterm=italic gui=italic
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
 
-set bg=dark
 let g:gruvbox_italic=1
 colorscheme gruvbox
 
