@@ -28,6 +28,7 @@ echo "export XDG_CONFIG_HOME=~/.config" >> ~/.zshenv
 echo "export XDG_DATA_HOME=~/.cache" >> ~/.zshenv
 echo "export ZDOTDIR=~/.config/zsh" >> ~/.zshenv
 mkdir -p ~/.cache/zsh ~/.config/zsh/plugins ~/.config/zsh/themes
+git clone https://github.com/Aloxaf/fzf-tab ~/.config/zsh/plugins/fzf-tab
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/plugins/zsh-syntax-highlighting
 git clone https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/themes/powerlevel10k
