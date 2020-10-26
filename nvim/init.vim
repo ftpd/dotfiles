@@ -59,7 +59,7 @@ map <leader>f  <Esc>:Goyo<CR>
 
 set t_ZH=[3m
 set t_ZR=[23m
-set termguicolor
+set termguicolors
 let g:gruvbox_italic=1
 hi Comment cterm=italic gui=italic
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
