@@ -8,17 +8,15 @@ HISTFILE=$XDG_DATA_HOME/zsh/history
 setopt inc_append_history
 setopt share_history
 
+zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors ''
+zmodload zsh/complist
+
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 if [ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ]; then
   source $XDG_CONFIG_HOME/fzf/fzf.zsh
-  source $XDG_CONFIG_HOME//zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
-  zstyle ":completion:*:git-checkout:*" sort false
-  zstyle ':completion:*:descriptions' format '[%d]'
-  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-  zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
-  export FZF_TMUX_HEIGHT=60%
   export FZF_DEFAULT_COMMAND='fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd'
   export FZF_CTRL_T_COMMAND='fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd'
   export FZF_DEFAULT_OPTS="--multi -e --ansi --layout=reverse --preview='bat --color=always --tabs=2 --style=plain --theme=gruvbox {}'"
@@ -33,10 +31,6 @@ if [ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ]; then
     git -c color.status=always status --short |
     fzf --ansi --preview '(git diff --color=always -- {-1} | sed 1,4d; cat {-1})'
   }
-else
-  zstyle ':completion:*' menu select
-  zstyle ':completion:*' list-colors ''
-  zmodload zsh/complist
 fi
 
 source $XDG_CONFIG_HOME/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
