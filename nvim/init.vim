@@ -59,22 +59,23 @@ map <leader>f  <Esc>:Goyo<CR>
 
 set t_ZH=[3m
 set t_ZR=[23m
+set termguicolor
+let g:gruvbox_italic=1
 hi Comment cterm=italic gui=italic
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
-
-let g:gruvbox_italic=1
 colorscheme gruvbox
+
+let g:rainbow_active = 1
 
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
 let $FZF_DEFAULT_COMMAND='fd -H -L --ignore-file ~/.config/local/fd'
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--preview', 'bat --color=always --style=plain --theme=gruvbox {}']}, <bang>0)
 command! -bang -nargs=? -complete=dir Colors
   \ call fzf#vim#colors({'options': ['-e', '--layout=reverse', '--preview', '']}, <bang>0)
 
-let g:rainbow_active = 1
-let g:terraform_fmt_on_save=1
 let g:lightline = {
   \ 'colorscheme': 'gruvbox',
   \ 'active': {
