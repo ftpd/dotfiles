@@ -19,7 +19,7 @@ if [ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ]; then
   source $XDG_CONFIG_HOME/fzf/fzf.zsh
   export FZF_DEFAULT_COMMAND='fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd'
   export FZF_CTRL_T_COMMAND='fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd'
-  export FZF_DEFAULT_OPTS="--multi -e --ansi --layout=reverse --preview='bat --color=always --tabs=2 --style=plain --theme=gruvbox {}'"
+  export FZF_DEFAULT_OPTS="--multi -e --ansi --layout=reverse --preview='bat --color=always --tabs=2 --style=plain --theme=Monokai\ Extended {}'"
   export FZF_CTRL_R_OPTS="-e --ansi --layout=reverse --preview=''"
   _fzf_compgen_path() {
     fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd . "$1"
