@@ -12,6 +12,7 @@ mkdir -p ~/.cache ~/.config/git ~/.config/local ~/.config/zsh
 
 ## neovim
 ln -sf ~/.dotfiles/nvim ~/.config/
+touch ~/.config/local/init.vim
 
 ## .gitignore
 ln -sf ~/.dotfiles/git/ignore ~/.config/git/ignore
