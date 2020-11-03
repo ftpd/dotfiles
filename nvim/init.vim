@@ -69,6 +69,11 @@ let g:rainbow_active = 1
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
+let g:ale_lint_on_save = 0
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_text_changed = 'never
+
 let $FZF_DEFAULT_COMMAND='fd -H -L --ignore-file ~/.config/local/fd'
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--preview', 'bat --color=always --style=plain --theme=Monokai\ Extended {}']}, <bang>0)
