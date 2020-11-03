@@ -95,3 +95,5 @@ let g:lightline = {
 function! LightLineReadonly()
   return &readonly && &filetype !=# 'help' ? 'RO' : ''
 endfunction
+
+source ~/.config/local/init.vim
