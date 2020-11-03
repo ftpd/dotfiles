@@ -59,7 +59,6 @@ map <leader>f  <Esc>:Goyo<CR>
 
 set t_ZH=[3m
 set t_ZR=[23m
-set termguicolors
 hi Comment cterm=italic gui=italic
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
 colorscheme paper
@@ -72,7 +71,7 @@ autocmd! User GoyoLeave Limelight!
 let g:ale_lint_on_save = 0
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_insert_leave = 0
-let g:ale_lint_on_text_changed = 'never
+let g:ale_lint_on_text_changed = 'never'
 
 let $FZF_DEFAULT_COMMAND='fd -H -L --ignore-file ~/.config/local/fd'
 command! -bang -nargs=? -complete=dir Files
