@@ -8,8 +8,6 @@ nvim/autoload
 zsh/plugins
 zsh/themes
 .git*
-.lesshst
-.python*
 .ssh/known_hosts
 .vim
 .zcomp*
