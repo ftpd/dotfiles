@@ -3,7 +3,8 @@
 .*history*
 .cache
 .config/nvim/autoload
-.config/zsh
+.config/zsh/plugins
+.config/zsh/themes
 nvim/autoload
 zsh/plugins
 zsh/themes

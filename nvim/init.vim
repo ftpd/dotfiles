@@ -1,5 +1,6 @@
 call plug#begin('~/.cache/vim-plugins')
 Plug 'ashfinal/vim-colors-paper'
+Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
@@ -61,7 +62,9 @@ set t_ZH=[3m
 set t_ZR=[23m
 hi Comment cterm=italic gui=italic
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
-colorscheme paper
+set termguicolors
+let ayucolor="dark"
+colorscheme ayu
 
 let g:rainbow_active = 1
 
