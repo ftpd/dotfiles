@@ -61,6 +61,7 @@ set t_ZR=[23m
 hi Comment cterm=italic gui=italic
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
 set termguicolors
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 
 let g:rainbow_active = 1
