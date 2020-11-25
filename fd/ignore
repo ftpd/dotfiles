@@ -5,6 +5,7 @@
 .config/nvim/autoload
 .config/zsh/plugins
 .config/zsh/themes
+.config/zsh/.zsh_sessions
 nvim/autoload
 zsh/plugins
 zsh/themes
