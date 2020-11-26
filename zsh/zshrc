@@ -2,6 +2,8 @@ bindkey -v
 bindkey  '^?' backward-delete-char
 bindkey "^A" vi-beginning-of-line
 bindkey "^E" vi-end-of-line
+bindkey "^P" up-line-or-history
+bindkey "^N" down-line-or-history
 
 autoload -U promptinit && promptinit
 autoload -U compinit && compinit -d $XDG_DATA_HOME/zsh/zcompdump
