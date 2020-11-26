@@ -36,8 +36,8 @@
       status                  # exit code of the last command
       # =========================[ Line #2 ]=========================
       newline
-      context                 # user@hostname
       vi_mode
+      context                 # user@hostname
       prompt_char             # prompt symbol
   )
 
