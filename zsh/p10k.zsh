@@ -778,7 +778,7 @@
 
   ##################################[ context: user@hostname ]##################################
   # Context color when running with privileges.
-  typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=196
+  typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=9
   # Context color in SSH without privileges.
   typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=
   # Default context color (no privileges, no SSH).
@@ -1524,7 +1524,7 @@
 typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 typeset -g POWERLEVEL9K_VI_INSERT_MODE_STRING=
 typeset -g POWERLEVEL9K_VI_COMMAND_MODE_STRING=COMMAND
-typeset -g POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND=9
+typeset -g POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND=196
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
