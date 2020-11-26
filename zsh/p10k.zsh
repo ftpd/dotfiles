@@ -37,6 +37,7 @@
       # =========================[ Line #2 ]=========================
       newline
       context                 # user@hostname
+      vi_mode
       prompt_char             # prompt symbol
   )
 
@@ -1521,6 +1522,9 @@
 
 # Tell `p10k configure` which file it should overwrite.
 typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
+typeset -g POWERLEVEL9K_VI_INSERT_MODE_STRING=
+typeset -g POWERLEVEL9K_VI_COMMAND_MODE_STRING=COMMAND
+typeset -g POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND=9
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
