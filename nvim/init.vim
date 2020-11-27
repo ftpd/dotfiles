@@ -49,9 +49,6 @@ nmap <C-h> :tabprevious<CR>
 nmap <C-j> :tabprevious<CR>
 nmap <C-k> :tabnext<CR>
 nmap <C-l> :tabnext<CR>
-noremap i k
-noremap k j
-noremap j h
 
 map <leader>b  <Esc>:set cc=79<CR>
 map <leader>nb <Esc>:set cc=0<CR>
