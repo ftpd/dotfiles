@@ -169,7 +169,8 @@
   # Default prompt symbol.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
   # Prompt symbol in command vi mode.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='❮'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION=' ❯'
+  # Prompt symbol in command vi mode.
   # Prompt symbol in visual vi mode.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIVIS_CONTENT_EXPANSION='V'
   # Prompt symbol in overwrite vi mode.
@@ -1523,8 +1524,9 @@
 # Tell `p10k configure` which file it should overwrite.
 typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 typeset -g POWERLEVEL9K_VI_INSERT_MODE_STRING=
-typeset -g POWERLEVEL9K_VI_COMMAND_MODE_STRING=COMMAND
-typeset -g POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND=196
+typeset -g POWERLEVEL9K_VI_COMMAND_MODE_STRING='VI MODE'
+typeset -g POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND=15
+typeset -g POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND=1
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
