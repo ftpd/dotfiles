@@ -26,7 +26,8 @@ ln -sf ~/.dotfiles/tmux ~/.config/
 ## zsh
 echo "skip_global_compinit=1" > ~/.zshenv
 echo "export XDG_CONFIG_HOME=~/.config" >> ~/.zshenv
-echo "export XDG_DATA_HOME=~/.cache" >> ~/.zshenv
+echo "export XDG_DATA_HOME=~/.config/_cache" >> ~/.zshenv
+echo "export XDG_DATA_HOME=~/.config/_cache" >> ~/.zshenv
 echo "export ZDOTDIR=~/.config/zsh" >> ~/.zshenv
 mkdir -p ~/.config/zsh/plugins ~/.config/zsh/themes
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/plugins/zsh-autosuggestions
