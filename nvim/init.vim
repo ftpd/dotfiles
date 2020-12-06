@@ -1,4 +1,4 @@
-call plug#begin('~/.cache/vim-plugins')
+call plug#begin('$XDG_CACHE_HOME/vim-plugins')
 Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'

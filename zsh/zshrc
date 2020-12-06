@@ -8,6 +8,7 @@ bindkey "^K" forward-char
 bindkey "^U" kill-whole-line
 bindkey -r "^[OA" up-line-or-history
 bindkey -r "^[[A" up-line-or-history
+#bindkey -M vicmd '^[' vi-add-eol
 
 autoload -U promptinit && promptinit
 autoload -U compinit && compinit -d $XDG_DATA_HOME/zsh/zcompdump
