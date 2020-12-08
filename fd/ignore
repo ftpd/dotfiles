@@ -1,7 +1,7 @@
 *.swp
 *~
 .*history*
-.cache
+.config/_cache
 .config/nvim/autoload
 .config/zsh/plugins
 .config/zsh/themes
