@@ -1,14 +1,4 @@
-bindkey -v
-bindkey  '^?' backward-delete-char
-bindkey "^A" vi-beginning-of-line
-bindkey "^E" vi-end-of-line
-bindkey "^P" up-line-or-history
-bindkey "^N" down-line-or-history
-bindkey "^K" forward-char
-bindkey "^U" kill-whole-line
-bindkey -r "^[OA" up-line-or-history
-bindkey -r "^[[A" up-line-or-history
-#bindkey -M vicmd '^[' vi-add-eol
+bindkey -e
 
 autoload -U promptinit && promptinit
 autoload -U compinit && compinit -d $XDG_DATA_HOME/zsh/zcompdump
