@@ -1,5 +1,5 @@
 call plug#begin('$XDG_CACHE_HOME/vim-plugins')
-Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
@@ -61,8 +61,9 @@ set t_ZR=[23m
 hi Comment cterm=italic gui=italic
 hi BadWhitespace ctermbg=lightblue guibg=lightblue
 set termguicolors
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
+"let g:molokai_original = 1
+let g:rehash256 = 1
+colorscheme molokai
 
 let g:rainbow_active = 1
 
@@ -71,12 +72,12 @@ autocmd! User GoyoLeave Limelight!
 
 let $FZF_DEFAULT_COMMAND='fd -H -L --ignore-file ~/.config/local/fd'
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--preview', 'bat --color=always --style=plain --theme=gruvbox {}']}, <bang>0)
+  \ call fzf#vim#files(<q-args>, {'options': ['-e', '--layout=reverse', '--preview', 'bat --color=always --style=plain --theme=Monokai\ Extended {}']}, <bang>0)
 command! -bang -nargs=? -complete=dir Colors
   \ call fzf#vim#colors({'options': ['-e', '--layout=reverse', '--preview', '']}, <bang>0)
 
 let g:lightline = {
-  \ 'colorscheme': 'gruvbox',
+  \ 'colorscheme': 'powerlineish',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'readonly', 'filename' ] ],
