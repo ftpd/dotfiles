@@ -1,0 +1,49 @@
+# ftpd monokai
+foreground:     #c7c7c7
+background:     #161616
+cursor:         #c7c7c7
+cursor text:    #feffff
+selection:      #c1ddff
+selection text: #000000
+
+color0:   black:   #161616
+color1:   red:     #fd4285
+color2:   green:   #a6e22d
+color3:   yellow:  #e5da72
+color4:   blue:    #0094d8
+color5:   magenta: #9a37ff
+color6:   cyan:    #50b6d8
+color7:   white:   #c7c7c7
+color8:   black:   #676767
+color9:   red:     #fa7fac
+color10:  green:   #bde271
+color11:  yellow:  #fff27f
+color12:  blue:    #00bdff
+color13:  magenta: #bd9eff
+color14:  cyan:    #5ed6fe
+color15:  white:   #feffff
+
+# ftpd gruvbox
+foreground:     #ebdbb2
+background:     #1d2021
+cursor:         #ebdbb2
+cursor text:    #272727
+selection:      #ebdbb2
+selection text: #655b53
+
+color0:   black:   #282828
+color1:   red:     #cc241d
+color2:   green:   #98971a
+color3:   yellow:  #d79921
+color4:   blue:    #458588
+color5:   magenta: #b16286
+color6:   cyan:    #689d6a
+color7:   white:   #a89984
+color8:   black:   #928374
+color9:   red:     #fb4934
+color10:  green:   #b8bb26
+color11:  yellow:  #fabd2f
+color12:  blue:    #83a598
+color13:  magenta: #d3869b
+color14:  cyan:    #8ec07c
+color15:  white:   #ebdbb2
