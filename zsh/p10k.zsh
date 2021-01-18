@@ -29,15 +29,15 @@
       # aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
       # terraform               # terraform workspace (https://www.terraform.io)
       kubecontext             # current kubernetes context (https://kubernetes.io/)
-      dir                     # current directory
       vcs                     # git status
       command_execution_time  # duration of the last command
       background_jobs         # presence of background jobs
       status                  # exit code of the last command
-      # =========================[ Line #2 ]=========================
       newline
+      # =========================[ Line #2 ]=========================
       vi_mode
       context                 # user@hostname
+      dir                     # current directory
       prompt_char             # prompt symbol
   )
 
