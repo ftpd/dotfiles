@@ -72,11 +72,11 @@ fi
 newline=$'\n'
 precmd() { vcs_info }
 if [[ -n "$SSH_CLIENT" ]]; then
-  PROMPT='%{$fg_bold[default]%}$(virtualenv_info)$(kube_ps1)%{$reset_color%}${vcs_info_msg_0_}${newline}%n@%m %{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%f '
+  PROMPT='%{$fg_bold[default]%}$(virtualenv_info)$(kube_ps1)%{$reset_color%}${vcs_info_msg_0_}${newline}%n@%m %{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%{$reset_color%} '
 else
-  PROMPT='%{$fg_bold[default]%}$(virtualenv_info)$(kube_ps1)%{$reset_color%}${vcs_info_msg_0_}${newline}%{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%f '
+  PROMPT='%{$fg_bold[default]%}$(virtualenv_info)$(kube_ps1)%{$reset_color%}${vcs_info_msg_0_}${newline}%{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%{$reset_color%} '
 fi
-[[ `id -u` -eq 0 ]] && PROMPT='%{$fg_bold[default]%}$(virtualenv_info)%{$reset_color%}${vcs_info_msg_0_}${newline}%{$fg_bold[red]%n@%m %{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%f '
+[[ `id -u` -eq 0 ]] && PROMPT='%{$fg_bold[default]%}$(virtualenv_info)%{$reset_color%}${vcs_info_msg_0_}${newline}%{$fg_bold[red]%n@%m %{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%{$reset_color%} '
 
 # local addons
 [ -e $XDG_CONFIG_HOME/local/zsh ] && source $XDG_CONFIG_HOME/local/zsh
