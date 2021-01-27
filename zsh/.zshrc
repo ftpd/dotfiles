@@ -76,7 +76,7 @@ if [[ -n "$SSH_CLIENT" ]]; then
 else
   PROMPT='%{$fg_bold[default]%}$(virtualenv_info)$(kube_ps1)%{$reset_color%}${vcs_info_msg_0_}${newline}%{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%{$reset_color%} '
 fi
-[[ `id -u` -eq 0 ]] && PROMPT='%{$fg_bold[default]%}$(virtualenv_info)%{$reset_color%}${vcs_info_msg_0_}${newline}%{$fg_bold[red]%n@%m %{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%{$reset_color%} '
+[[ $UID -eq 0 ]] && PROMPT='%{$fg_bold[default]%}$(virtualenv_info)$(kube_ps1)%{$reset_color%}${vcs_info_msg_0_}${newline}%{$fg_bold[red]%}%n@%m%{$reset_color%} %{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%{$reset_color%} '
 
 # local addons
 [ -e $XDG_CONFIG_HOME/local/zsh ] && source $XDG_CONFIG_HOME/local/zsh
