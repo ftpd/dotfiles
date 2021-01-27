@@ -5,10 +5,10 @@ autoload -U colors && colors
 autoload -U promptinit && promptinit
 autoload -U compinit && compinit -d $XDG_DATA_HOME/zsh/zcompdump
 
-HISTSIZE=10000
-SAVEHIST=$HISTSIZE
-HISTFILE=$XDG_DATA_HOME/zsh/history
-LESSHISTFILE='/dev/null'
+export HISTSIZE=10000
+export SAVEHIST=$HISTSIZE
+export HISTFILE=$XDG_DATA_HOME/zsh/history
+export LESSHISTFILE='/dev/null'
 
 setopt prompt_subst
 setopt share_history
@@ -69,9 +69,14 @@ if [ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ]; then
 fi
 
 # prompt
+newline=$'\n'
 precmd() { vcs_info }
-PROMPT='%{$fg_bold[default]%}$(virtualenv_info)$(kube_ps1)%{$reset_color%}${vcs_info_msg_0_}
-%{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%f '
+if [[ -n "$SSH_CLIENT" ]]; then
+  PROMPT='%{$fg_bold[default]%}$(virtualenv_info)$(kube_ps1)%{$reset_color%}${vcs_info_msg_0_}${newline}%n@%m %{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%f '
+else
+  PROMPT='%{$fg_bold[default]%}$(virtualenv_info)$(kube_ps1)%{$reset_color%}${vcs_info_msg_0_}${newline}%{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%f '
+fi
+[[ `id -u` -eq 0 ]] && PROMPT='%{$fg_bold[default]%}$(virtualenv_info)%{$reset_color%}${vcs_info_msg_0_}${newline}%{$fg_bold[red]%n@%m %{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%f '
 
 # local addons
 [ -e $XDG_CONFIG_HOME/local/zsh ] && source $XDG_CONFIG_HOME/local/zsh
