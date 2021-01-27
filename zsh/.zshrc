@@ -1,57 +1,17 @@
+# key mode
 bindkey -e
 
-autoload -U vcs_info
-autoload -U colors && colors
-autoload -U promptinit && promptinit
-autoload -U compinit && compinit -d $XDG_DATA_HOME/zsh/zcompdump
-
+# global exports and options
+setopt share_history
+setopt inc_append_history
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
 export HISTFILE=$XDG_DATA_HOME/zsh/history
 export LESSHISTFILE='/dev/null'
 
-setopt prompt_subst
-setopt share_history
-setopt inc_append_history
-
+autoload -U compinit && compinit -d $XDG_DATA_HOME/zsh/zcompdump
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ''
-zmodload zsh/complist
-
-# plugins
-source $ZDOTDIR/plugins/kube-ps1/kube-ps1.sh
-source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# virtualenv
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-function virtualenv_info(){
-    [[ -n "$VIRTUAL_ENV" ]] && venv="${VIRTUAL_ENV##*/}" || venv=''
-    [[ -n "$venv" ]] && echo " $venv "
-}
-
-# git
-zstyle ':vcs_info:*' enable git
-() {
-    zstyle ':vcs_info:*' stagedstr '%F{green}+'
-    zstyle ':vcs_info:*' unstagedstr '%F{red}!'
-    zstyle ':vcs_info:*' formats " %b %m%u%c%{$reset_color%}"
-    zstyle ':vcs_info:*' check-for-changes true
-    zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
-}
-+vi-git-untracked() {
-if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
-  [[ $(git ls-files --other --directory --exclude-standard | sed q | wc -l | tr -d ' ') == 1 ]] ; then
-  hook_com[unstaged]+='%F{red}?'
-fi
-}
-
-# kubernetes
-KUBE_PS1_PREFIX=''
-KUBE_PS1_SUFFIX=' '
-KUBE_PS1_DIVIDER='/'
-KUBE_PS1_SEPARATOR=''
-KUBE_PS1_NS_COLOR='blue'
-KUBE_PS1_CTX_COLOR='blue'
 
 # fzf
 if [ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ]; then
@@ -68,15 +28,12 @@ if [ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ]; then
   }
 fi
 
-# prompt
-newline=$'\n'
-precmd() { vcs_info }
-if [[ -n "$SSH_CLIENT" ]]; then
-  PROMPT='%{$fg_bold[default]%}$(virtualenv_info)$(kube_ps1)%{$reset_color%}${vcs_info_msg_0_}${newline}%n@%m %{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%{$reset_color%} '
-else
-  PROMPT='%{$fg_bold[default]%}$(virtualenv_info)$(kube_ps1)%{$reset_color%}${vcs_info_msg_0_}${newline}%{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%{$reset_color%} '
-fi
-[[ $UID -eq 0 ]] && PROMPT='%{$fg_bold[default]%}$(virtualenv_info)$(kube_ps1)%{$reset_color%}${vcs_info_msg_0_}${newline}%{$fg_bold[red]%}%n@%m%{$reset_color%} %{$fg_bold[cyan]%}%~ %F{%(?.green.red)}❯%{$reset_color%} '
+# plugins
+source $ZDOTDIR/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# theme
+source $ZDOTDIR/p10k.zsh
+source $ZDOTDIR/modules/powerlevel10k/powerlevel10k.zsh-theme
 
 # local addons
 [ -e $XDG_CONFIG_HOME/local/zsh ] && source $XDG_CONFIG_HOME/local/zsh

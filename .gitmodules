@@ -1,6 +1,6 @@
-[submodule "zsh/plugins/zsh-syntax-highlighting"]
-	path = zsh/plugins/zsh-syntax-highlighting
+[submodule "zsh/modules/powerlevel10k"]
+	path = zsh/modules/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "zsh/modules/zsh-syntax-highlighting"]
+	path = zsh/modules/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "zsh/plugins/kube-ps1"]
-	path = zsh/plugins/kube-ps1
-	url = https://github.com/jonmosco/kube-ps1.git
