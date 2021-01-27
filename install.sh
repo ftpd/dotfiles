@@ -7,7 +7,7 @@ rm -rf ~/.cache ~/.config/_cache ~/.config/fd ~/.config/git/ignore ~/.config/nvi
 rm -rf ~/.fdignore ~/.fzf.bash ~/.fzf.zsh ~/.gitconfig ~/.gitignore ~/.history ~/.tmux.conf ~/.vim* ~/.zcomp* ~/.zsh*
 
 # repo + preparations
-git clone https://github.com/ftpd/dotfiles.git ~/.dotfiles
+git clone --recurse https://github.com/ftpd/dotfiles.git ~/.dotfiles
 mkdir -p ~/.config/_cache/zsh ~/.config/git ~/.config/local
 
 ## neovim
