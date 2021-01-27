@@ -8,7 +8,7 @@ rm -rf ~/.fdignore ~/.fzf.bash ~/.fzf.zsh ~/.gitconfig ~/.gitignore ~/.history ~
 
 # repo + preparations
 git clone https://github.com/ftpd/dotfiles.git ~/.dotfiles
-mkdir -p ~/.config/_cache/zsh ~/.config/git ~/.config/local ~/.config/zsh
+mkdir -p ~/.config/_cache/zsh ~/.config/git ~/.config/local
 
 ## neovim
 ln -sf ~/.dotfiles/nvim ~/.config/
@@ -24,13 +24,10 @@ ln -sf ~/.dotfiles/fd ~/.config/
 ln -sf ~/.dotfiles/tmux ~/.config/
 
 ## zsh
-echo "skip_global_compinit=1" > ~/.zshenv
-echo "export XDG_CONFIG_HOME=~/.config" >> ~/.zshenv
-echo "export XDG_CACHE_HOME=~/.config/_cache" >> ~/.zshenv
 echo "export XDG_DATA_HOME=~/.config/_cache" >> ~/.zshenv
+echo "export XDG_CACHE_HOME=~/.config/_cache" >> ~/.zshenv
+echo "export XDG_CONFIG_HOME=~/.config" >> ~/.zshenv
+echo "" >> ~/.zshenv
+echo "skip_global_compinit=1" > ~/.zshenv
 echo "export ZDOTDIR=~/.config/zsh" >> ~/.zshenv
-mkdir -p ~/.config/zsh/plugins ~/.config/zsh/themes
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/plugins/zsh-syntax-highlighting
-git clone https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/themes/powerlevel10k
-ln -sf ~/.dotfiles/zsh/zshrc ~/.config/zsh/.zshrc
+ln -sf ~/.dotfiles/zsh ~/.config/
