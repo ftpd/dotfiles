@@ -33,6 +33,7 @@ if [ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ]; then
 fi
 
 # plugins
+source $ZDOTDIR/modules/forgit.plugin.zsh
 source $ZDOTDIR/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # theme

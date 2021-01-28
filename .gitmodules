@@ -4,3 +4,6 @@
 [submodule "zsh/modules/zsh-syntax-highlighting"]
 	path = zsh/modules/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "zsh/modules/forgit"]
+	path = zsh/modules/forgit
+	url = https://github.com/wfxr/forgit.git
