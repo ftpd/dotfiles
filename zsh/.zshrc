@@ -26,10 +26,6 @@ if [ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ]; then
   _fzf_compgen_dir() {
     fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd --type d . "$1"
   }
-  gs() {
-    git -c color.status=always status --short |
-    fzf --ansi --preview '(git diff --color=always -- {-1} | sed 1,4d; cat {-1})'
-  }
 fi
 
 # plugins
