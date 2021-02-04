@@ -5,6 +5,8 @@
 .config/nvim/autoload
 .config/zsh/modules
 .config/zsh/.zsh_sessions
+.dotfiles/nvim/autoload
+.dotfiles/zsh/modules
 nvim/autoload
 zsh/modules
 .git*
