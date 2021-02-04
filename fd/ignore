@@ -9,6 +9,7 @@
 .dotfiles/zsh/modules
 nvim/autoload
 zsh/modules
+_cache
 .git*
 .ssh/known_hosts
 .vim
