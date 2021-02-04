@@ -11,21 +11,21 @@
   autoload -Uz is-at-least && is-at-least 5.1 || return
 
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-      # line 1
-      virtualenv
-      aws
-      terraform
-      kubecontext
-      vcs
-      background_jobs
-      command_execution_time
-      status
-      newline
-      # line 2
-      vi_mode
-      context
-      dir
-      prompt_char
+    # line 1
+    virtualenv
+    aws
+    terraform
+    kubecontext
+    vcs
+    background_jobs
+    command_execution_time
+    status
+    newline
+    # line 2
+    vi_mode
+    context
+    dir
+    prompt_char
   )
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 
