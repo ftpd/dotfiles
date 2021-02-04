@@ -3,12 +3,10 @@
 .*history*
 .config/_cache
 .config/nvim/autoload
-.config/zsh/plugins
-.config/zsh/themes
+.config/zsh/modules
 .config/zsh/.zsh_sessions
 nvim/autoload
-zsh/plugins
-zsh/themes
+zsh/modules
 .git*
 .ssh/known_hosts
 .vim
