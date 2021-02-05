@@ -21,7 +21,7 @@
     command_execution_time
     newline
     # line 2
-    vi_mode
+    #vi_mode
     context
     dir
     prompt_char
