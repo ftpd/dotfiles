@@ -26,10 +26,10 @@ if [ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ]; then
   _fzf_compgen_dir() {
     fd -H -L --ignore-file $XDG_CONFIG_HOME/local/fd --type d . "$1"
   }
+  source $ZDOTDIR/fzf-git.zsh
 fi
 
 # plugins
-source $ZDOTDIR/modules/forgit/forgit.plugin.zsh
 source $ZDOTDIR/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # theme
