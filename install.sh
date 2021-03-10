@@ -8,7 +8,7 @@ rm -rf ~/.fdignore ~/.fzf.bash ~/.fzf.zsh ~/.gitconfig ~/.gitignore ~/.history ~
 
 # repo + preparations
 git clone --recurse https://github.com/ftpd/dotfiles.git ~/.dotfiles
-mkdir -p ~/.config/_cache/zsh ~/.config/git ~/.config/local
+mkdir -p ~/.cache/zsh ~/.config/git ~/.config/local
 
 ## neovim
 ln -sf ~/.dotfiles/nvim ~/.config/
@@ -31,4 +31,3 @@ echo "export XDG_CACHE_HOME=~/.cache" >> ~/.zshenv
 echo "export XDG_CONFIG_HOME=~/.config" >> ~/.zshenv
 echo "export ZDOTDIR=~/.config/zsh" >> ~/.zshenv
 ln -sf ~/.dotfiles/zsh ~/.config/
-mkdir -p "$XDG_DATA_HOME/zsh"

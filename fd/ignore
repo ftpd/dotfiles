@@ -1,7 +1,6 @@
 *.swp
 *~
 .*history*
-.config/_cache
 .config/nvim/autoload
 .config/zsh/modules
 .config/zsh/.zsh_sessions
@@ -9,7 +8,7 @@
 .dotfiles/zsh/modules
 nvim/autoload
 zsh/modules
-_cache
+.cache
 .git*
 .ssh/known_hosts
 .vim
