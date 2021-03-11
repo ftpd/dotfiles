@@ -32,6 +32,10 @@ fi
 
 # plugins
 source $ZDOTDIR/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export WD_CONFIG=$XDG_CONFIG_HOME/wd_list
+wd () {
+  . $ZDOTDIR/modules/wd/wd.sh
+}
 
 # theme
 source $ZDOTDIR/p10k.zsh
