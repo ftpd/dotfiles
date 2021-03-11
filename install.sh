@@ -25,9 +25,9 @@ touch ~/.config/local/fd
 ln -sf ~/.dotfiles/tmux ~/.config/
 
 ## zsh
-echo "skip_global_compinit=1" > ~/.zshenv
-echo "export XDG_DATA_HOME=~/.cache" > ~/.zshenv
-echo "export XDG_CACHE_HOME=~/.cache" >> ~/.zshenv
-echo "export XDG_CONFIG_HOME=~/.config" >> ~/.zshenv
-echo "export ZDOTDIR=~/.config/zsh" >> ~/.zshenv
+echo "skip_global_compinit=1" > $HOME/.zshenv
+echo "export XDG_DATA_HOME=$HOME/.cache" >> $HOME/.zshenv
+echo "export XDG_CACHE_HOME=$HOME/.cache" >> $HOME/.zshenv
+echo "export XDG_CONFIG_HOME=$HOME/.config" >> $HOME/.zshenv
+echo "export ZDOTDIR=$HOME/.config/zsh" >> $HOME/.zshenv
 ln -sf ~/.dotfiles/zsh ~/.config/
