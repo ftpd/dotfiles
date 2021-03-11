@@ -1,5 +1,6 @@
 # key mode
 bindkey -e
+mkdir -p $XDG_DATA_HOME/zsh
 
 # global exports and options
 setopt share_history

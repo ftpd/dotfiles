@@ -1,4 +1,4 @@
-call plug#begin('$XDG_CACHE_HOME/vim-plugins')
+call plug#begin('$XDG_DATA_HOME/vim-plugins')
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
